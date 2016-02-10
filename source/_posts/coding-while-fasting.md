@@ -33,7 +33,7 @@ Instead of sitting at your desk for very long periods, go out. Even better, go f
 
 ## 4\. Stop thinking about food and think about the ajr
 
-[![Do as you're told!](http://meltuhamy.com/wp-content/uploads/2015/06/thinking-food.jpg)](http://meltuhamy.com/wp-content/uploads/2015/06/thinking-food.jpg)
+![Do as you're told!'](/images/thinking-food.jpg)
 
 I know it's hard, especially when you get those emails from people coming back from holidays with different types of sweets from all over the world. So instead, every time you think about food, think about the reward you'll get inshaAllah.
 

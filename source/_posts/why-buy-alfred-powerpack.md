@@ -18,7 +18,7 @@ Alfred is probably my #1 productivity tool on the Mac. _Anything_ is literally 
 
 Alfred also integrates with [Dash](http://kapeli.com/dash). Dash is an offline, quick, searchable documentation tool. Combine Dash with Alfred, and you get documentation for your favourite language or library literally in a few keystrokes.
 
-![Instant documentation](https://cloud.githubusercontent.com/assets/398893/3528858/76b5f1f2-0793-11e4-88c8-0d1f2921e745.png)
+![Instant documentation](/images/dash-screenshot.png)
 
 Dash isn't free (though there is a free trial), but if you're willing to invest in some great developer tools that would save you time, this combo works great.
 

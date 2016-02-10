@@ -28,11 +28,11 @@ So going ahead with Ionic, I set it up straight away.
 
 Muslims pray five times a day. The times of prayer is based on the position of the sun in the location you're in. While you can work out the prayer times [using some math](http://praytimes.org/calculation/) (and in fact there are hundreds of apps that already do this), there is an added importance of praying at the same time as other Muslims in the area. So if everyone in the city used their own app that works it out, each person would be praying at different times! The solution was to use the prayer times at the Mosque that's closest to you. Fortunately in Belfast there are only two mosques, and they use the same prayer timetable. So, I decided to write an app that uses the mosque's prayer times.
 
-![A screenshot of the app in action](http://meltuhamy.com/wp-content/uploads/2015/03/salahtimes-screenshot-614x1024.png)
+![A screenshot of the app in action](/images/salahtimes-screenshot-614x1024.png)
 
 ### Setting up
 
-[![So many tech. So little effort to set up.](http://meltuhamy.com/wp-content/uploads/2015/03/tools.png)](http://meltuhamy.com/wp-content/uploads/2015/03/tools.png)
+![So many tech. So little effort to set up.](/images/ionic-tools.png)
 
 I followed the normal set up procedure without worrying too much about the details. It really is [this easy](http://ionicframework.com/getting-started/):
 

@@ -29,7 +29,7 @@ Here's what I do when I get a new Mac / reinstall OSX.
 
 ### Make the terminal awesome
 
-![Dat terminal do](https://raw.githubusercontent.com/sindresorhus/pure/master/screenshot.png)
+![Dat terminal do](/images/pure-terminal-screenshot.png)
 
 1.  Download [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh). I can't be bothered explaining the [benefits of zsh over bash](http://www.slideshare.net/jaguardesignstudio/why-zsh-is-cooler-than-your-shell-16194692) but you'll feel the power of zsh as soon as you start using it.
 2.  Set up [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting). Gives instant visual feedback to tell you what you're about to execute is correct. e.g. If you type the command "echo" incorrectly, it will show in red. If you type it correctly, it will show in green (like the above screenshot), _before_ you actually execute the command.

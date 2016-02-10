@@ -16,10 +16,10 @@ One of my first tasks at [blinkbox books](https://www.blinkboxbooks.com/) was to
 
 ### How Optimizely works
 
-![Optimizely's WYSIWYG editor (screenshot from optimizely.com)](https://help.optimizely.com/hc/en-us/article_attachments/201205034/Screen_Shot_2012-11-20_at_1.27.34_PM.png)
+![Optimizely's WYSIWYG editor (screenshot from optimizely.com)](/images/optimizely-screenshot.png)
 
 Optimizely is a [A/B testing](https://www.optimizely.com/ab-testing/) service that allows creating one or more variations of a page, and targeting those variations on a percentage of the page's visitors. The way it works is simple. Optimizely provides a WYSIWYG interface which allows a user (e.g. the marketing team) to make changes to a variation. The changes translate into some jQuery code. This code is embedded into a JavaScript snippet that is inserted into the page.
-[![How Optimizley changes the page](http://meltuhamy.com/wp-content/uploads/2015/03/optimizely-flow-1024x244.png)](http://meltuhamy.com/wp-content/uploads/2015/03/optimizely-flow.png)
+[![How Optimizley changes the page](/images/optimizely-flow.png)
 
 ### Dynamically updating dynamic single page ecommerce websites
 
@@ -62,7 +62,7 @@ I found that having this solution along with listening for the $routeChangeSucce
 
 One could ask, surely we're calling the Optimizely API dozens of times. Is this wise? Well, it turns out that the Optimizely snippets are idempotent - meaning if we call it multiple times, it won't change the page multiple times.
 
-![Too many XHR requests](http://meltuhamy.com/wp-content/uploads/2015/03/xhr-toodamnhigh.jpg)
+![Too many XHR requests](/images/xhr-toodamnhigh.jpg)
 
 However, I did notice that several XHR requests ended up being called because of Optimizely's logging feature. This is bad. Every time we call `optimizely.push('activate')`, an XHR request is queued. This is not only bad network usage, it will also drain the battery and is just pure evil. We had to have a workaround. It would be nice if Optimizely allowed us to disable logging for a single page, but until then, I implemented an incredibly hacky workaround. The solution: monkey-patch the XHR.
 
