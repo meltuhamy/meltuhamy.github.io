@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mohamed&#39;s blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://meltuhamy.com/"/>
+  <updated>2016-02-10T20:58:46.000Z</updated>
+  <id>http://meltuhamy.com/</id>
+  
+  <author>
+    <name>Mohamed Eltuhamy</name>
+    <email>tuhamy@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Moving to hexo</title>
+    <link href="http://meltuhamy.com/uncategorized/moving-to-hexo/"/>
+    <id>http://meltuhamy.com/uncategorized/moving-to-hexo/</id>
+    <published>2016-02-07T21:48:09.000Z</published>
+    <updated>2016-02-10T20:58:46.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Today I migrated my blog from Wordpress to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;.&lt;br&gt;Hexo is a statically generated blogging framework, meaning you write posts locally using &lt;a href=&quot;https://en.wikipedia.org/wiki/Markdown&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Why_move_from_WordPress_3F&quot;&gt;&lt;a href=&quot;#Why_move_from_WordPress_3F&quot; class=&quot;headerlink&quot; title=&quot;Why move from WordPress?&quot;&gt;&lt;/a&gt;Why move from WordPress?&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/wp-logo.svg&quot; alt=&quot;WordPress. You did well, but you&amp;#39;re not fast enough&quot;&gt;&lt;/p&gt;
+&lt;p&gt;WordPress is great for managing a blog and is a fully-fledged all in one solution. It’s also the most popular blogging platform, with many sites on the web using it to manage blogs and content. So why move away from something that’s powerful and trusted?&lt;/p&gt;
+&lt;p&gt;The answer for me is the combination of &lt;em&gt;price&lt;/em&gt; and &lt;em&gt;performance&lt;/em&gt;. Put simply, WordPress gives you loads of features and power, but at the price of performance. If you want your website and blog to scale, you’ll have to spend money. The more features and plugins you add, the slower your site will get. If you want to speed it up you’ll have to invest in some better servers.&lt;/p&gt;
+&lt;p&gt;My original set up was that I’ve got a very simple blog that doesn’t use a plethora of plugins. Even with my simple site which has heavy caching on content and CDN-hosted images and resources, it is still noticably slow. It was hosted by &lt;a href=&quot;http://my.tsohost.com/aff.php?aff=2735&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TSO Host&lt;/a&gt;, which gave me all I needed and more - but the main drawback was performance. It simply wasn’t instant.&lt;/p&gt;
+&lt;p&gt;There was two options in front of me:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Improve performance by going for a cloud based hosting solution with CDN&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Greatly simplify my blog by switching to a statically generated site.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I investigated option option 1: a cloud based solution. I found a &lt;a href=&quot;http://publishingwithwordpress.com/estimating-costs-wordpress-amazon-aws/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;great website&lt;/a&gt; that describes what’s needed and how much it is. The conclusion was that it would cost 10-20 USD and a great deal of hassle setting everything up. Sure, I have experience with linux and LAMP - but even then, I’m managing my blog in my spare time and don’t want to spend my weekends fixing nginx server issues. And with that, I’m paying money to get this done. For me, the hassle was not worth it.&lt;/p&gt;
+&lt;p&gt;I started to look into option 2: a statically generated blog. This means that I write my blog locally, save it, pass it through a generator with a templating engine, and publish the result. This means I can’t just blog from anywhere. I have to use a computer, save files, commit them to git, run a program and push the changes. Luckily, I’m used to this. In fact I used a Markdown plugin for WordPress that allowed me to write posts using Markdown.&lt;/p&gt;
+&lt;p&gt;Because it’s statically generated, the speed was good. There is no server-side processing involved whatsoever.&lt;/p&gt;
+&lt;p&gt;Because it’s statically generated, the price was good. I’m able to host my blog &lt;em&gt;free&lt;/em&gt; on GitHub. I just need to pay for my domain.&lt;/p&gt;
+&lt;p&gt;I got what I was looking for. Speed and performance&lt;/p&gt;
+&lt;h2 id=&quot;The_move_to_hexo&quot;&gt;&lt;a href=&quot;#The_move_to_hexo&quot; class=&quot;headerlink&quot; title=&quot;The move to hexo&quot;&gt;&lt;/a&gt;The move to hexo&lt;/h2&gt;&lt;p&gt;Next, I looked for what platform to use. There are &lt;a href=&quot;https://www.staticgen.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;loads&lt;/a&gt; to pick from.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/hexo-logo.svg&quot; alt=&quot;Hexo. You&amp;#39;re written in JavaScript. I chose you.&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I decided to use hexo because… well, I just liked that it was written in JavaScript and I found a cool theme :) I agree, not really an engineering approach to picking a platform but who cares, this has what I need. I figured if I got bored I can easily switch.&lt;/p&gt;
+&lt;p&gt;Luckily, hexo had an official &lt;a href=&quot;https://hexo.io/docs/migration.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WordPress importer&lt;/a&gt;. So moving my blog was a few clicks and terminal commands away.&lt;/p&gt;
+&lt;p&gt;Once imported, I tweaked a few posts, copied my images, set up comments using &lt;a href=&quot;https://disqus.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Disqus&lt;/a&gt;, set up Google Analytics, etc. These are all options in a .yaml file. It’s that easy.&lt;/p&gt;
+&lt;p&gt;Once I finished with my blog locally, I created a repo for it on &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt; and followed instructions to get it &lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;working with my own domain name&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My experience over all was pretty sweet and straight forward. Hooray!&lt;/p&gt;
+&lt;h2 id=&quot;The_price_and_performance&quot;&gt;&lt;a href=&quot;#The_price_and_performance&quot; class=&quot;headerlink&quot; title=&quot;The price and performance&quot;&gt;&lt;/a&gt;The price and performance&lt;/h2&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Today I migrated my blog from Wordpress to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;.&lt;br&gt;Hexo is a statically ge
+    
+    </summary>
+    
+    
+      <category term="blog" scheme="http://meltuhamy.com/tags/blog/"/>
+    
+      <category term="hexo" scheme="http://meltuhamy.com/tags/hexo/"/>
+    
+      <category term="markdown" scheme="http://meltuhamy.com/tags/markdown/"/>
+    
+      <category term="wordpress" scheme="http://meltuhamy.com/tags/wordpress/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Coding While Fasting</title>
+    <link href="http://meltuhamy.com/productivity/coding-while-fasting/"/>
+    <id>http://meltuhamy.com/productivity/coding-while-fasting/</id>
+    <published>2015-06-23T18:58:00.000Z</published>
+    <updated>2016-02-10T20:06:17.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Some say you can’t be productive in Ramadan. I disagree. You can be &lt;em&gt;more&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt; productive while fasting, and it can help you stay focused. Here’s how I do it.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;&lt;sup&gt;*&lt;/sup&gt;Coding while fasting made me a really &lt;em&gt;fast&lt;/em&gt; coder. Ok that was terrible.&lt;/small&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-_Ease_off_the_coffee&quot;&gt;&lt;a href=&quot;#1-_Ease_off_the_coffee&quot; class=&quot;headerlink&quot; title=&quot;1. Ease off the coffee&quot;&gt;&lt;/a&gt;1. Ease off the coffee&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;pro·gram·mer (n) An organism capable of converting caffeine into code.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As true as the definition above may seem, you can still be a programmer without drinking coffee. I promise. Coffee can help you concentrate, but a lot of the time it’s our &lt;a href=&quot;http://www.huffingtonpost.com/2011/09/02/decaf-coffee-buzz-caffeine_n_946746.html?ir=Food&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;perception of this than its true effects&lt;/a&gt;. So, to increase focus during Ramadan, I decided to slowly reduce my caffeine intake as Ramadan got closer. This means I’m less dependent on coffee to stay &lt;a href=&quot;http://media.giphy.com/media/emWySpOLFLUAM/giphy.gif&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;awake&lt;/a&gt; (e.g. on Monday mornings), and I can reduce the &lt;a href=&quot;http://www.caffeineinformer.com/caffeine-withdrawal-symptoms-top-ten&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;withdrawal symptoms&lt;/a&gt; during the month.&lt;/p&gt;
+&lt;h2 id=&quot;2-_Fast_Mondays_and_Thursdays&quot;&gt;&lt;a href=&quot;#2-_Fast_Mondays_and_Thursdays&quot; class=&quot;headerlink&quot; title=&quot;2. Fast Mondays and Thursdays&quot;&gt;&lt;/a&gt;2. Fast Mondays and Thursdays&lt;/h2&gt;&lt;p&gt;Intermittent fasting has &lt;a href=&quot;http://www.bbc.co.uk/news/health-19112549&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;health benefits&lt;/a&gt; and immense &lt;a href=&quot;http://sunnah.com/muslim/13/213&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;reward&lt;/a&gt;. On the run up to Ramadan this gives you the extra benefit of getting your body prepared for the long fasts. Once the month starts, you’re already used to it and are able to spend your energy on other ibadaat.&lt;/p&gt;
+&lt;h2 id=&quot;3-_Go_out_for_no_lunch&quot;&gt;&lt;a href=&quot;#3-_Go_out_for_no_lunch&quot; class=&quot;headerlink&quot; title=&quot;3. Go out for no lunch&quot;&gt;&lt;/a&gt;3. Go out for no lunch&lt;/h2&gt;&lt;p&gt;Instead of sitting at your desk for very long periods, go out. Even better, go for a walk to the local Masjid, pray Duhr, and stay there for a while. You might not be feeding your body but you’re nourishing your soul ;)&lt;/p&gt;
+&lt;h2 id=&quot;4-_Stop_thinking_about_food_and_think_about_the_ajr&quot;&gt;&lt;a href=&quot;#4-_Stop_thinking_about_food_and_think_about_the_ajr&quot; class=&quot;headerlink&quot; title=&quot;4. Stop thinking about food and think about the ajr&quot;&gt;&lt;/a&gt;4. Stop thinking about food and think about the ajr&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/thinking-food.jpg&quot; alt=&quot;Do as you&amp;#39;re told!&amp;#39;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I know it’s hard, especially when you get those emails from people coming back from holidays with different types of sweets from all over the world. So instead, every time you think about food, think about the reward you’ll get inshaAllah.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Whoever observes fasts during the month of Ramadan out of sincere faith, and &lt;strong&gt;hoping to attain Allah’s rewards&lt;/strong&gt;, then all his past sins will be forgiven. (Al-Bukhari and Muslim)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;5-_Stop_blaming_it_on_the_fasting&quot;&gt;&lt;a href=&quot;#5-_Stop_blaming_it_on_the_fasting&quot; class=&quot;headerlink&quot; title=&quot;5. Stop blaming it on the fasting&quot;&gt;&lt;/a&gt;5. Stop blaming it on the fasting&lt;/h2&gt;&lt;p&gt;You always hear people doing silly mistakes and saying “sorry, I’m fasting today”. This will only make you believe that fasting will decrease your performance. Take a positive outlook on the fasting. If you keep telling yourself it’s affecting you negatively, it will. If you tell yourself it &lt;em&gt;improves&lt;/em&gt; your productivity, which imho it does, it will.&lt;/p&gt;
+&lt;h2 id=&quot;More_on_Ramadan_productivity&quot;&gt;&lt;a href=&quot;#More_on_Ramadan_productivity&quot; class=&quot;headerlink&quot; title=&quot;More on Ramadan productivity&quot;&gt;&lt;/a&gt;More on Ramadan productivity&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://productivemuslim.com/productivity-in-ramadan-a-myth-or-reality/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Productive Muslim&lt;/a&gt; has a lot of practical tips for making the most of Ramadan and being super productive!&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Some say you can’t be productive in Ramadan. I disagree. You can be &lt;em&gt;more&lt;/em&gt;&lt;sup&gt;*&lt;/sup&gt; productive while fasting, and it can help y
+    
+    </summary>
+    
+      <category term="productivity" scheme="http://meltuhamy.com/categories/productivity/"/>
+    
+    
+      <category term="coding" scheme="http://meltuhamy.com/tags/coding/"/>
+    
+      <category term="coffee" scheme="http://meltuhamy.com/tags/coffee/"/>
+    
+      <category term="fasting" scheme="http://meltuhamy.com/tags/fasting/"/>
+    
+      <category term="food" scheme="http://meltuhamy.com/tags/food/"/>
+    
+      <category term="islam" scheme="http://meltuhamy.com/tags/islam/"/>
+    
+      <category term="ramadan" scheme="http://meltuhamy.com/tags/ramadan/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>A better Ionic starter app</title>
+    <link href="http://meltuhamy.com/dev/a-better-ionic-starter-app/"/>
+    <id>http://meltuhamy.com/dev/a-better-ionic-starter-app/</id>
+    <published>2015-03-22T12:32:12.000Z</published>
+    <updated>2016-02-10T21:11:02.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;em&gt;TLDR&lt;/em&gt;: I wrote a nice ionic starter app that anyone can use as a boilerplate. &lt;a href=&quot;https://github.com/meltuhamy/ionic-base&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;You can find it on GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;While I was writing &lt;a href=&quot;http://meltuhamy.com/tech/dev/ionic-speed-writing-a-prayer-times-smartphone-app-in-a-day/&quot;&gt;my first Ionic app&lt;/a&gt;, I realised there are a lot of tools from front end web development that can be added to the project. The &lt;a href=&quot;https://github.com/driftyco/ionic-starter-tabs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;default starter app&lt;/a&gt; was a bit too simple.&lt;/p&gt;
+&lt;h3 id=&quot;A_better_file_structure&quot;&gt;&lt;a href=&quot;#A_better_file_structure&quot; class=&quot;headerlink&quot; title=&quot;A better file structure&quot;&gt;&lt;/a&gt;A better file structure&lt;/h3&gt;&lt;p&gt;In the default starter app, every angular component was in its own file.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;js&amp;#10;&amp;#9500;&amp;#9472;&amp;#9472; app.js&amp;#10;&amp;#9500;&amp;#9472;&amp;#9472; controllers.js&amp;#10;&amp;#9492;&amp;#9472;&amp;#9472; services.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Opening up &lt;code&gt;controllers.js&lt;/code&gt; will show all the controllers of our app. What if we had many? I prefer having a file for each controller.&lt;/p&gt;
+&lt;p&gt;A better starter app should have each controller, service, constant, etc. in its own file. That way, we can quickly get to the code we’re looking for later on.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;js&amp;#10;&amp;#9500;&amp;#9472;&amp;#9472; app.js&amp;#10;&amp;#9500;&amp;#9472;&amp;#9472; controllers&amp;#10;&amp;#9474;&amp;#160;&amp;#160; &amp;#9500;&amp;#9472;&amp;#9472; account.ctrl.js&amp;#10;&amp;#9474;&amp;#160;&amp;#160; &amp;#9500;&amp;#9472;&amp;#9472; chatdetail.ctrl.js&amp;#10;&amp;#9474;&amp;#160;&amp;#160; &amp;#9500;&amp;#9472;&amp;#9472; chats.ctrl.js&amp;#10;&amp;#9474;&amp;#160;&amp;#160; &amp;#9492;&amp;#9472;&amp;#9472; dash.ctrl.js&amp;#10;&amp;#9492;&amp;#9472;&amp;#9472; services&amp;#10;    &amp;#9492;&amp;#9472;&amp;#9472; chats.service.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;The suffix in the names (&lt;code&gt;.ctrl.js&lt;/code&gt;) is optional, but allows us to distinguish between controllers/services with the same name.&lt;/p&gt;
+&lt;h3 id=&quot;Unit_testing_support_with_Karma&quot;&gt;&lt;a href=&quot;#Unit_testing_support_with_Karma&quot; class=&quot;headerlink&quot; title=&quot;Unit testing support with Karma&quot;&gt;&lt;/a&gt;Unit testing support with Karma&lt;/h3&gt;&lt;p&gt;I was surprised to find that the default project didn’t have unit test support. This was strange because Angular already had really good unit and end to end testing support by default. To fix this, we simply need to add and  &lt;code&gt;karma.conf.js&lt;/code&gt;. Most of it is the default settings (simply run &lt;code&gt;karma init&lt;/code&gt;, make sure you have &lt;a href=&quot;http://karma-runner.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;karma&lt;/a&gt; installed), with the following included files:&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    files: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;www/lib/ionic/js/ionic.bundle.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;node_modules/angular-mocks/angular-mocks.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;www/lib/ngCordova/dist/ng-cordova.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;www/lib/ngCordova/dist/ng-cordova-mocks.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;test/**/*.test.js&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;src/js/**/*.js&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Now, we can run &lt;code&gt;karma start&lt;/code&gt; to run the unit tests. We can also update our package.json to include a testing step. This is useful when using travis for continuous builds.&lt;/p&gt;
+&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;&lt;span class=&quot;attribute&quot;&gt;scripts&lt;/span&gt;&quot;: &lt;span class=&quot;value&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &quot;&lt;span class=&quot;attribute&quot;&gt;test&lt;/span&gt;&quot;: &lt;span class=&quot;value&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;./node_modules/karma/bin/karma start --single-run --browsers PhantomJS&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Running &lt;code&gt;npm test&lt;/code&gt; will run the unit tests.&lt;/p&gt;
+&lt;h3 id=&quot;Concatenating_2C_uglifiying_and_building_our_app&quot;&gt;&lt;a href=&quot;#Concatenating_2C_uglifiying_and_building_our_app&quot; class=&quot;headerlink&quot; title=&quot;Concatenating, uglifiying and building our app&quot;&gt;&lt;/a&gt;Concatenating, uglifiying and building our app&lt;/h3&gt;&lt;p&gt;We could create an optimized app by putting everything in one file and reducing the number of requests (even if they are all local). To do this, we use a few gulp plugins.&lt;/p&gt;
+&lt;p&gt;First, we move all our &lt;em&gt;source&lt;/em&gt; files into a new folder called &lt;code&gt;src&lt;/code&gt;. The plan is to combine all these source files into a single &lt;code&gt;app.js&lt;/code&gt; file that will go in the &lt;code&gt;www&lt;/code&gt; folder. Here’s how we do it:&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;build&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;src/js/**/*.js&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          .pipe(sourcemaps.init())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          .pipe(ngAnnotate(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            single_quotes: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &amp;#125;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          .pipe(concat(&lt;span class=&quot;string&quot;&gt;&#39;app.js&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          .pipe(uglify())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          .pipe(sourcemaps.write())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          .pipe(header(&lt;span class=&quot;string&quot;&gt;&#39;window.VERSION = &quot;&amp;lt;%= pkg.version %&amp;gt;;&quot;;&#39;&lt;/span&gt;, &amp;#123; pkg : pkg &amp;#125; ))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;www/dist&#39;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;The gulp task is easy to read, but there’s a few things we didn’t mention:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;sourcemaps&lt;/code&gt; plugin. Here, we write the sourcemap to the same source file. This will allow us to debug the files more naturally in chrome developer tools, even though they are uglified and concatenated into a single file.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;ngAnnotate&lt;/code&gt; plugin. We use this to allow us to minify Angular shorthand injections. E.g. &lt;code&gt;app.controller(&amp;#39;MyCtrl&amp;#39;, function($scope){});&lt;/code&gt; becomes &lt;code&gt;controller(&amp;#39;MyCtrl&amp;#39;, [&amp;#39;$scope&amp;#39;, function($scope){}]);&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;header&lt;/code&gt; plugin. We use this to smartly insert the app’s version number inside the app itself. We talk about versioning later in this article.&lt;/li&gt;
+&lt;li&gt;Finally, we write to the &lt;code&gt;www/dist&lt;/code&gt; folder. Putting the output into another folder allows us to modify &lt;code&gt;.gitignore&lt;/code&gt; so we don’t version the generated files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;While we’re here, we can also modify the &lt;code&gt;sass&lt;/code&gt; gulp task so it also goes into the &lt;code&gt;www/dist&lt;/code&gt; folder.&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;sass&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;done&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;src/scss/ionic.app.scss&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .pipe(sass())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;./www/dist/css/&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .pipe(minifyCss(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      keepSpecialComments: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .pipe(rename(&amp;#123; extname: &lt;span class=&quot;string&quot;&gt;&#39;.min.css&#39;&lt;/span&gt; &amp;#125;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;./www/dist/css/&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .on(&lt;span class=&quot;string&quot;&gt;&#39;end&#39;&lt;/span&gt;, done);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;Faster_page_changing_using_Angular_u2019s__24templateCache&quot;&gt;&lt;a href=&quot;#Faster_page_changing_using_Angular_u2019s__24templateCache&quot; class=&quot;headerlink&quot; title=&quot;Faster page changing using Angular’s $templateCache&quot;&gt;&lt;/a&gt;Faster page changing using Angular’s &lt;code&gt;$templateCache&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;When switching between ‘pages’ in a SPA, new template file requests are made. If we move all these template files into a single file and pre-cache it, these requests can be saved. There’s a gulp task for that.&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;templates&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; gulp.src(&lt;span class=&quot;string&quot;&gt;&#39;src/templates/**/*.html&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .pipe(templateCache(&lt;span class=&quot;string&quot;&gt;&#39;templates.js&#39;&lt;/span&gt;,&amp;#123;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;starter&#39;&lt;/span&gt;, root:&lt;span class=&quot;string&quot;&gt;&#39;templates/&#39;&lt;/span&gt;&amp;#125;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    .pipe(gulp.dest(&lt;span class=&quot;string&quot;&gt;&#39;www/dist&#39;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;Making_it_play_nice_with_ionic_serve&quot;&gt;&lt;a href=&quot;#Making_it_play_nice_with_ionic_serve&quot; class=&quot;headerlink&quot; title=&quot;Making it play nice with ionic serve&quot;&gt;&lt;/a&gt;Making it play nice with &lt;code&gt;ionic serve&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;Finally, let’s modify our &lt;code&gt;ionic.project&lt;/code&gt; file to make use of the build steps.&lt;/p&gt;
+&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;&lt;span class=&quot;attribute&quot;&gt;gulpStartupTasks&lt;/span&gt;&quot;: &lt;span class=&quot;value&quot;&gt;[&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;default&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;watch&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;This will run our &lt;code&gt;gulp&lt;/code&gt; and &lt;code&gt;gulp watch&lt;/code&gt; tasks which we create as follows, in our gulpfile.js:&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;default&#39;&lt;/span&gt;, [&lt;span class=&quot;string&quot;&gt;&#39;sass&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;templates&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;build&#39;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;watch&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  gulp.watch(paths.sass, [&lt;span class=&quot;string&quot;&gt;&#39;sass&#39;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  gulp.watch(paths.js, [&lt;span class=&quot;string&quot;&gt;&#39;build&#39;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  gulp.watch(paths.templates, [&lt;span class=&quot;string&quot;&gt;&#39;templates&#39;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Great, now every time we make a change, our build will be triggered and the page will automatically refresh!&lt;/p&gt;
+&lt;h3 id=&quot;Updating_our_app_version&quot;&gt;&lt;a href=&quot;#Updating_our_app_version&quot; class=&quot;headerlink&quot; title=&quot;Updating our app version&quot;&gt;&lt;/a&gt;Updating our app version&lt;/h3&gt;&lt;p&gt;Finally, I noticed that every time I update my app version number, I have to update it in quite a few places. package.json, bower.json, config.xml, and anywhere I use it inside my actual app (e.g. in the ‘about’ page). Instead, it would be nice to do this once. Luckily there’s a gulp task for that, and it’s really simple:&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;bump&#39;&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;gulp-cordova-bump&#39;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Now when I want to update my app version number, all I have to do is run one of the following:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ gulp bump --patch&amp;#10;$ gulp bump --minor&amp;#10;$ gulp bump --major&amp;#10;$ gulp bump --setversion=2.1.0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;And gulp will patch everything up. Oh, and remember that &lt;code&gt;banner&lt;/code&gt; step in the build mentioned above? Well, this will get the version number from our package.json, put it into our compiled app.js script as a global variable (&lt;code&gt;window.VERSION&lt;/code&gt;), and we can now use it in our app! To make it play nice with Angular, we can put it into our &lt;code&gt;$rootScope&lt;/code&gt; so we can use it directly in our template. We simply add the following line in our &lt;code&gt;run&lt;/code&gt; block:&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;.run(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;$ionicPlatform, $rootScope&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  $rootScope.VERSION = &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.VERSION;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;// ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;and we can use it in any template:&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  App Version &amp;#123;&amp;#123;VERSION&amp;#125;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Show_me_the_code&quot;&gt;&lt;a href=&quot;#Show_me_the_code&quot; class=&quot;headerlink&quot; title=&quot;Show me the code&quot;&gt;&lt;/a&gt;Show me the code&lt;/h3&gt;&lt;p&gt;Feel free to work with it on GitHub:&lt;br&gt;&lt;a href=&quot;https://github.com/meltuhamy/ionic-base&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/meltuhamy/ionic-base&lt;/a&gt;.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;TLDR&lt;/em&gt;: I wrote a nice ionic starter app that anyone can use as a boilerplate. &lt;a href=&quot;https://github.com/meltuhamy/ionic-base&quot; t
+    
+    </summary>
+    
+      <category term="dev" scheme="http://meltuhamy.com/categories/dev/"/>
+    
+    
+      <category term="gulp" scheme="http://meltuhamy.com/tags/gulp/"/>
+    
+      <category term="ionic" scheme="http://meltuhamy.com/tags/ionic/"/>
+    
+      <category term="karma" scheme="http://meltuhamy.com/tags/karma/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ionic Speed: Writing a prayer times smartphone app in a day</title>
+    <link href="http://meltuhamy.com/dev/ionic-speed-writing-a-prayer-times-smartphone-app-in-a-day/"/>
+    <id>http://meltuhamy.com/dev/ionic-speed-writing-a-prayer-times-smartphone-app-in-a-day/</id>
+    <published>2015-03-11T14:09:54.000Z</published>
+    <updated>2016-02-10T20:09:23.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; I’m happy to announce the app has been released on the Google Play Store. &lt;a href=&quot;http://goo.gl/EhJdx1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Check it out!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Whilst I was in Belfast, I promised my sister I’d finally write an app for them to show our Mosque’s prayer times. Initially I planned to use this as a chance to learn some new tech such as native iOS and Android development, but unfortunately I kept procrastinating and didn’t manage to do it. With a couple of days remaining before leaving Belfast, I realised I had not fulfilled my promise, and decided: what’s the fastest way to write an application that &lt;em&gt;works&lt;/em&gt; and looks nice - given my current skill set? The answer was obvious. &lt;a href=&quot;http://ionicframework.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ionic Framework&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ionic Framework as an obvious pick because of the following reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I already have experience writing Angular apps. I could jump right in and know what I’m doing.&lt;/li&gt;
+&lt;li&gt;The app I’m making is really simple, and I already have an idea of how it’ll work.&lt;/li&gt;
+&lt;li&gt;I want my app to work on iOS and Android, and I don’t have the time to write different apps for each platform. Ionic works this out for you ;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So going ahead with Ionic, I set it up straight away.&lt;/p&gt;
+&lt;h3 id=&quot;Wait_2C_what_are_you_building_again_3F&quot;&gt;&lt;a href=&quot;#Wait_2C_what_are_you_building_again_3F&quot; class=&quot;headerlink&quot; title=&quot;Wait, what are you building again?&quot;&gt;&lt;/a&gt;Wait, what are you building again?&lt;/h3&gt;&lt;p&gt;Muslims pray five times a day. The times of prayer is based on the position of the sun in the location you’re in. While you can work out the prayer times &lt;a href=&quot;http://praytimes.org/calculation/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;using some math&lt;/a&gt; (and in fact there are hundreds of apps that already do this), there is an added importance of praying at the same time as other Muslims in the area. So if everyone in the city used their own app that works it out, each person would be praying at different times! The solution was to use the prayer times at the Mosque that’s closest to you. Fortunately in Belfast there are only two mosques, and they use the same prayer timetable. So, I decided to write an app that uses the mosque’s prayer times.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/salahtimes-screenshot-614x1024.png&quot; alt=&quot;A screenshot of the app in action&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Setting_up&quot;&gt;&lt;a href=&quot;#Setting_up&quot; class=&quot;headerlink&quot; title=&quot;Setting up&quot;&gt;&lt;/a&gt;Setting up&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/images/ionic-tools.png&quot; alt=&quot;So many tech. So little effort to set up.&quot;&gt;&lt;/p&gt;
+&lt;p&gt;I followed the normal set up procedure without worrying too much about the details. It really is &lt;a href=&quot;http://ionicframework.com/getting-started/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;this easy&lt;/a&gt;:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g cordova ionic&amp;#10;ionic start belfastsalah tabs&amp;#10;cd belfastsalah&amp;#10;ionic platform add ios&amp;#10;ionic build ios&amp;#10;ionic emulate ios&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;App_structure&quot;&gt;&lt;a href=&quot;#App_structure&quot; class=&quot;headerlink&quot; title=&quot;App structure&quot;&gt;&lt;/a&gt;App structure&lt;/h3&gt;&lt;p&gt;By default, the Ionic app structure looked something like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;app.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;controllers.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;services.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And each file contained all the angular components of our app. I prefer structuring the app differently, so each service, controller, and so on is in its own file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;app.js&lt;/code&gt;: Contains config and module definitions.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;constants/&lt;/code&gt;: Inside this folder, all our angular constants (in our case, our prayer time data) will go here.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;controllers/&lt;/code&gt;: Each controller will live in its own file in this folder&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;filters/&lt;/code&gt;: same for filters&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;services/&lt;/code&gt;: and services&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now that we have a much better structure, we can now think about the services, controllers, constants and filters we need. Luckily, I already had all the data for the prayer time table. It’s essentially a JSON array containing objects for each day in the year - so for 366 days we had 366 objects. Each object is an array representing the different prayer times of that day. For example, here’s what 1 January’s prayer times looks like:&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[&lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;06:49&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;08:44&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;12:29&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;13:55&quot;&lt;/span&gt;,&lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;16:11&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;18:00&quot;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;This file would go in as an &lt;a href=&quot;https://docs.angularjs.org/api/auto/service/$provide#constant&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;angular constant&lt;/a&gt;, so we can inject it as a dependency wherever we need it.&lt;/p&gt;
+&lt;p&gt;Now, we define our services. We need a service that keeps track of the time ticking, I called it the &lt;code&gt;Ticker&lt;/code&gt; service. We also need a service that gets the required prayer times for a day or a month. I called it &lt;code&gt;PrayerTimes&lt;/code&gt;. We define and implement a few methods: &lt;code&gt;getByDate&lt;/code&gt; would get the prayer times given a JavaScript &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Date&lt;/a&gt; object. &lt;code&gt;getByMonth&lt;/code&gt; would get the prayer times for a whole month, and &lt;code&gt;getNextPrayer&lt;/code&gt; would get the next and previous prayers and their times, given a JavaScript Date object.&lt;/p&gt;
+&lt;p&gt;Finally, we define our controllers. We essentially define a controller for each tab. We therefore have three: &lt;code&gt;Today&lt;/code&gt;, &lt;code&gt;Month&lt;/code&gt;, and &lt;code&gt;Settings&lt;/code&gt;. The &lt;code&gt;Today&lt;/code&gt; controller would make use of the &lt;code&gt;Ticker&lt;/code&gt; and &lt;code&gt;PrayerTimes&lt;/code&gt; services to update the remaining time for the next prayer. The &lt;code&gt;Month&lt;/code&gt; controller would simply display all the times for the current month, and the &lt;code&gt;Settings&lt;/code&gt; controller is a work in progress, but would allow disabling and enabling app notifications (see conclusion).&lt;/p&gt;
+&lt;h3 id=&quot;Adding_some_goodies_to_help_us_out&quot;&gt;&lt;a href=&quot;#Adding_some_goodies_to_help_us_out&quot; class=&quot;headerlink&quot; title=&quot;Adding some goodies to help us out&quot;&gt;&lt;/a&gt;Adding some goodies to help us out&lt;/h3&gt;&lt;p&gt;To save time and effort, I used &lt;a href=&quot;https://lodash.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;lodash&lt;/a&gt;, &lt;a href=&quot;http://momentjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;moment.js&lt;/a&gt;, and &lt;a href=&quot;https://github.com/urish/angular-moment&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;angular-moment&lt;/a&gt; to help with array searching, time calculations, and displaying times as strings in the view. To do this with Ionic, you can simply type &lt;code&gt;ionic add &amp;amp;lt;package name&amp;amp;gt;&lt;/code&gt; and Ionic will take care of it (uses bower).&lt;/p&gt;
+&lt;h3 id=&quot;Conclusion_and_source_code&quot;&gt;&lt;a href=&quot;#Conclusion_and_source_code&quot; class=&quot;headerlink&quot; title=&quot;Conclusion and source code&quot;&gt;&lt;/a&gt;Conclusion and source code&lt;/h3&gt;&lt;p&gt;Overall, it was incredibly easy and fast to get the app finished. In fact, Ionic allowed me to also test the app without having to connect a device using their &lt;a href=&quot;http://view.ionic.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ionic View&lt;/a&gt; service. Really, the only thing left is easy deployment / integration with Google Play Store / AppStore, though I’m not sure if that’s even possible.&lt;/p&gt;
+&lt;p&gt;There are a few things left, however. I didn’t get time to set up notifications for prayers, but this is certainly feasible using the &lt;a href=&quot;https://github.com/katzer/cordova-plugin-local-notifications&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;localNotification&lt;/a&gt; cordova plugin. Hopefully I can get this done in a future version!&lt;/p&gt;
+&lt;p&gt;Check out the &lt;a href=&quot;https://github.com/meltuhamy/belfastsalah&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;source code on GitHub&lt;/a&gt;.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;Update:&lt;/em&gt; I’m happy to announce the app has been released on the Google Play Store. &lt;a href=&quot;http://goo.gl/EhJdx1&quot; target=&quot;_blank&quot;
+    
+    </summary>
+    
+      <category term="dev" scheme="http://meltuhamy.com/categories/dev/"/>
+    
+    
+      <category term="android" scheme="http://meltuhamy.com/tags/android/"/>
+    
+      <category term="app" scheme="http://meltuhamy.com/tags/app/"/>
+    
+      <category term="ionic" scheme="http://meltuhamy.com/tags/ionic/"/>
+    
+      <category term="ios" scheme="http://meltuhamy.com/tags/ios/"/>
+    
+      <category term="prayer" scheme="http://meltuhamy.com/tags/prayer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Angular and Optimizely: A/B testing on SPAs</title>
+    <link href="http://meltuhamy.com/dev/angular-and-optimizely-ab-testing-on-spas/"/>
+    <id>http://meltuhamy.com/dev/angular-and-optimizely-ab-testing-on-spas/</id>
+    <published>2015-03-05T12:08:23.000Z</published>
+    <updated>2016-02-10T20:03:45.000Z</updated>
+    
+    <content type="html">&lt;p&gt;One of my first tasks at &lt;a href=&quot;https://www.blinkboxbooks.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;blinkbox books&lt;/a&gt; was to integrate &lt;a href=&quot;https://www.optimizely.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Optimizely&lt;/a&gt;‘s powerful A/B testing service with our dynamic Angular JS single page web app. This blog post describes my experience and also shows how this can be done in a way that eliminates &lt;a href=&quot;http://en.wikipedia.org/wiki/Flash_of_unstyled_content&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;flashes of unstyled content (fooc)&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;How_Optimizely_works&quot;&gt;&lt;a href=&quot;#How_Optimizely_works&quot; class=&quot;headerlink&quot; title=&quot;How Optimizely works&quot;&gt;&lt;/a&gt;How Optimizely works&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/images/optimizely-screenshot.png&quot; alt=&quot;Optimizely&amp;#39;s WYSIWYG editor (screenshot from optimizely.com)&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Optimizely is a &lt;a href=&quot;https://www.optimizely.com/ab-testing/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;A/B testing&lt;/a&gt; service that allows creating one or more variations of a page, and targeting those variations on a percentage of the page’s visitors. The way it works is simple. Optimizely provides a WYSIWYG interface which allows a user (e.g. the marketing team) to make changes to a variation. The changes translate into some jQuery code. This code is embedded into a JavaScript snippet that is inserted into the page.&lt;br&gt;[&lt;img src=&quot;/images/optimizely-flow.png&quot; alt=&quot;How Optimizley changes the page&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Dynamically_updating_dynamic_single_page_ecommerce_websites&quot;&gt;&lt;a href=&quot;#Dynamically_updating_dynamic_single_page_ecommerce_websites&quot; class=&quot;headerlink&quot; title=&quot;Dynamically updating dynamic single page ecommerce websites&quot;&gt;&lt;/a&gt;Dynamically updating dynamic single page ecommerce websites&lt;/h3&gt;&lt;p&gt;Optimizely works great if the page is rendered on the server, and user interactions are simply page changes. In other words, the jQuery snippet that changes the page would be applied once the page is loaded.&lt;/p&gt;
+&lt;p&gt;But what if the page loads a single page application (SPA)? In that case, Optimizely doesn’t know if the page has changed, because that is controlled by JavaScript instead of page requests. This is explained in detail in the &lt;a href=&quot;https://help.optimizely.com/hc/en-us/articles/203326524-AngularJS-Backbone-js-and-other-Single-Page-Applications&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;support pages&lt;/a&gt;. To solve this, Optimizely provides an API that can be used to manually tell Optimizely that a page has changed. We simply call &lt;code&gt;optimizely.push(&amp;#39;activate&amp;#39;)&lt;/code&gt; to tell Optimizely to activate any targeted by the current URL.&lt;/p&gt;
+&lt;p&gt;However, SPAs aren’t just about changing pages dynamically. They can involve very dynamic views and components that asynchronously request content dynamically. For example, if the user scrolls down, more items can be dynamically requested and displayed. To make use of Optimizely’s WYSIWYG editor, we needed to support &lt;em&gt;any&lt;/em&gt; update of &lt;em&gt;any&lt;/em&gt; part of the page at &lt;em&gt;any&lt;/em&gt; url. This would mean that we could pass Optimizely to the marketing team without worrying about making any kind of code change to make it work. This post is an overview of what I did to get Optimizely to correctly apply modifications to any part of a SPA.&lt;/p&gt;
+&lt;h3 id=&quot;The_naive_solution_3A_activate_experiments_when_the_page_changes&quot;&gt;&lt;a href=&quot;#The_naive_solution_3A_activate_experiments_when_the_page_changes&quot; class=&quot;headerlink&quot; title=&quot;The naive solution: activate experiments when the page changes&quot;&gt;&lt;/a&gt;The naive solution: activate experiments when the page changes&lt;/h3&gt;&lt;p&gt;There’s a few events that we could hook into and activate Optimizely experiments. Each of these solutions fixes a problem but introduces another problem. Nevertheless, let’s talk through each of them.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://docs.angularjs.org/api/ngRoute/service/$route&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;$routeChangeSuccess&lt;/a&gt;: The obvious one. Every time the page changes, we need to apply any experiments that might be associated with the new URL. We call &lt;code&gt;optimizely.push(&amp;#39;activate&amp;#39;)&lt;/code&gt; and this will take care of everything for us. The problem with this is that there might be angular directives and embedded modules in the page which load dynamically. In this case, the Optimizely snippet would be applied, but no actual changes would be made because the required elements would not be loaded yet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://docs.angularjs.org/api/ng/directive/ngInclude&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;$includeContentLoaded&lt;/a&gt;: Handling dynamic templates. To fix the problem above, we could listen for this event and call &lt;code&gt;optimizely.push(&amp;#39;activate&amp;#39;)&lt;/code&gt; every time it fires. This will work but only for the first time that the template is loaded. For example, if we load a template for one ‘tab’, then switch tabs, the second time the user visits the first tab $includeContentLoaded will &lt;em&gt;not&lt;/em&gt; be fired, as it is already loaded and cached by angular. The other problem is angular directives that have external templates will not trigger this event when their templates are loaded.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/angular/angular.js/blob/master/src/ng/browser.js#L75&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;$browser.notifyWhenNoOutstandingRequests&lt;/a&gt;: An estimate of when the page has finished ‘loading’. This private API is what is used by &lt;a href=&quot;https://github.com/angular/protractor&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;protractor&lt;/a&gt; for end-to-end tests. If we register a callback that activates Optimizely when the page has finished loading according to angular, this would apply any page modifications correctly to the page. However, the drawback is that it will take some time for the page to finish loading and so there will be a very obvious flash of un-styled content.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;A_more_comprehensive_solution_3A_hook_into_the_digest_cycle&quot;&gt;&lt;a href=&quot;#A_more_comprehensive_solution_3A_hook_into_the_digest_cycle&quot; class=&quot;headerlink&quot; title=&quot;A more comprehensive solution: hook into the digest cycle.&quot;&gt;&lt;/a&gt;A more comprehensive solution: hook into the digest cycle.&lt;/h3&gt;&lt;p&gt;What if we knew roughly when the DOM has changed by Angular? We could then apply the Optimizely changes every time Angular changed the DOM. Luckily, we do know when the DOM has changed - in the &lt;a href=&quot;http://angular-tips.com/blog/2013/08/watch-how-the-apply-runs-a-digest/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;digest&lt;/a&gt; cycle. We can simply call the activate method every time angular executes the digest cycle. And this is easily done by setting up an infinite watch, like below:&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; force = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$rootScope.$watch(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  setTimeout(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    force = !force;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; force;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  $&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.optimizely.push([&lt;span class=&quot;string&quot;&gt;&#39;activate&#39;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;I found that having this solution along with listening for the $routeChangeSuccess event worked best, but there are still some problems…&lt;/p&gt;
+&lt;h4 id=&quot;Applying_an_experiment_multiple_times&quot;&gt;&lt;a href=&quot;#Applying_an_experiment_multiple_times&quot; class=&quot;headerlink&quot; title=&quot;Applying an experiment multiple times.&quot;&gt;&lt;/a&gt;Applying an experiment multiple times.&lt;/h4&gt;&lt;p&gt;One could ask, surely we’re calling the Optimizely API dozens of times. Is this wise? Well, it turns out that the Optimizely snippets are idempotent - meaning if we call it multiple times, it won’t change the page multiple times.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/xhr-toodamnhigh.jpg&quot; alt=&quot;Too many XHR requests&quot;&gt;&lt;/p&gt;
+&lt;p&gt;However, I did notice that several XHR requests ended up being called because of Optimizely’s logging feature. This is bad. Every time we call &lt;code&gt;optimizely.push(&amp;#39;activate&amp;#39;)&lt;/code&gt;, an XHR request is queued. This is not only bad network usage, it will also drain the battery and is just pure evil. We had to have a workaround. It would be nice if Optimizely allowed us to disable logging for a single page, but until then, I implemented an incredibly hacky workaround. The solution: monkey-patch the XHR.&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;patchXHR&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; originalOpen = &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.XMLHttpRequest.prototype.open;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; originalSend = &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.XMLHttpRequest.prototype.send;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; prevUrl;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.XMLHttpRequest.prototype.open = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;type, uri&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (uri.lastIndexOf(&lt;span class=&quot;string&quot;&gt;&#39;log.optimizely.com&#39;&lt;/span&gt;) &amp;gt;= &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &amp;amp;&amp;amp; fromDigest)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;// we set this up in order to intercept the request in the &#39;send&#39; function.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;._requestURI = uri;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      fromDigest = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    originalOpen.apply(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;arguments&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.XMLHttpRequest.prototype.send = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;._requestURI === &lt;span class=&quot;string&quot;&gt;&#39;string&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;amp;&amp;amp; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;._requestURI.lastIndexOf(&lt;span class=&quot;string&quot;&gt;&#39;log.optimizely.com&#39;&lt;/span&gt;) &amp;gt;= &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; currentUrl = $location.path();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (currentUrl === prevUrl) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// we prevent the request if this was the same page&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.abort();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// we allow requests on actual page changes.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        prevUrl = currentUrl;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        originalSend.apply(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;arguments&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;// we allow all non-optimizely requests&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      originalSend.apply(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;arguments&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;This just about solves the requests problem, but there are &lt;em&gt;still&lt;/em&gt; some other problems…&lt;/p&gt;
+&lt;h3 id=&quot;Undoing_an_experiment&quot;&gt;&lt;a href=&quot;#Undoing_an_experiment&quot; class=&quot;headerlink&quot; title=&quot;Undoing an experiment&quot;&gt;&lt;/a&gt;Undoing an experiment&lt;/h3&gt;&lt;p&gt;What if we had an experiment that removed the navigation bar, or the footer, or any other common element in our website? For example, what if we wanted to remove the page footer but only in the ‘About Us’ page, and not any other pages? Well, because we’re using a modular single page application, once we remove the element (using the Optimizely snippet), it’ll be removed from our whole application until the user reloads! This is because common elements like the page header and footer don’t change between page changes. All the routing is done in JavaScript, remember?&lt;/p&gt;
+&lt;p&gt;Unfortunately, there wasn’t any elegant way to fix this. We decided to simply not allow these types of changes unless they are app-wide. It would have been nice if there was a way of undoing a snippet, but this would definitely be a challenge (e.g. if you remove an element and not hide it, then re-insert it, how do you ensure angular still knows about it? What about memory and performance considerations).&lt;/p&gt;
+&lt;h3 id=&quot;Conclusion&quot;&gt;&lt;a href=&quot;#Conclusion&quot; class=&quot;headerlink&quot; title=&quot;Conclusion&quot;&gt;&lt;/a&gt;Conclusion&lt;/h3&gt;&lt;p&gt;Getting third party services to work with a SPA is hard. Optimizely should invest engineering effort to make it work with at least the most popular frameworks such as Angular, or at least provide more fine grained APIs to allow users to integrate manually.&lt;/p&gt;
+&lt;p&gt;While the solution of using Angular’s digest cycle worked, it isn’t great and smells like a hack. There needs to be a better way of applying A/B testing experiments on a single page app, and this would require a lot of thought.&lt;/p&gt;
+&lt;p&gt;Having said that, for very simple web apps, the approach described above would probably be overkill. In fact, for most simple applications, using the $routeChangeSuccess approach would work just fine. However, if your app is dynamic and has many components and directives which are also dynamic, getting Optimizely to work will need a bit more hacking - and this article was supposed to be an overview of what we did at blinkbox to get it to work.&lt;/p&gt;
+&lt;h3 id=&quot;Show_me_the_code&quot;&gt;&lt;a href=&quot;#Show_me_the_code&quot; class=&quot;headerlink&quot; title=&quot;Show me the code&quot;&gt;&lt;/a&gt;Show me the code&lt;/h3&gt;&lt;p&gt;To do all of the above (and a bit more), I wrote an Angular service for the &lt;a href=&quot;https://github.com/blinkboxbooks/client-web-app.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;blinkbox books application&lt;/a&gt;. You can see the service on &lt;a href=&quot;https://github.com/blinkboxbooks/client-web-app.js/blob/master/app/scripts/services/optimizely_service.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;. I’m also thinking about taking this out and making it its own service so anyone can drop it into their app.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;One of my first tasks at &lt;a href=&quot;https://www.blinkboxbooks.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;blinkbox books&lt;/a&gt; was to integrate &lt;a h
+    
+    </summary>
+    
+      <category term="dev" scheme="http://meltuhamy.com/categories/dev/"/>
+    
+    
+      <category term="ab testing" scheme="http://meltuhamy.com/tags/ab-testing/"/>
+    
+      <category term="angular" scheme="http://meltuhamy.com/tags/angular/"/>
+    
+      <category term="blinkbox" scheme="http://meltuhamy.com/tags/blinkbox/"/>
+    
+      <category term="optimizely" scheme="http://meltuhamy.com/tags/optimizely/"/>
+    
+      <category term="spa" scheme="http://meltuhamy.com/tags/spa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Why I bought the Alfred Powerpack</title>
+    <link href="http://meltuhamy.com/dev/why-buy-alfred-powerpack/"/>
+    <id>http://meltuhamy.com/dev/why-buy-alfred-powerpack/</id>
+    <published>2015-02-14T10:00:32.000Z</published>
+    <updated>2016-02-10T20:08:39.000Z</updated>
+    
+    <content type="html">&lt;p&gt;If you haven’t heard of Alfred, &lt;a href=&quot;http://www.alfredapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;check it out&lt;/a&gt;. It’s basically a Spotlight replacement with a lot of power.&lt;/p&gt;
+&lt;p&gt;If you use Alfred but not sure if you should buy the &lt;a href=&quot;http://www.alfredapp.com/powerpack/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Powerpack&lt;/a&gt;, check out some of the cool things you can do with it in &lt;a href=&quot;https://github.com/zenorocha/alfred-workflows&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;this GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Alfred is probably my #1 productivity tool on the Mac. &lt;em&gt;Anything&lt;/em&gt; is literally a few keystrokes away.&lt;/p&gt;
+&lt;p&gt;Alfred also integrates with &lt;a href=&quot;http://kapeli.com/dash&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dash&lt;/a&gt;. Dash is an offline, quick, searchable documentation tool. Combine Dash with Alfred, and you get documentation for your favourite language or library literally in a few keystrokes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/dash-screenshot.png&quot; alt=&quot;Instant documentation&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Dash isn’t free (though there is a free trial), but if you’re willing to invest in some great developer tools that would save you time, this combo works great.&lt;/p&gt;
+&lt;p&gt;Finally one more thing I love about Alfred: opening Google Docs. If you install &lt;a href=&quot;https://drive.google.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google Drive&lt;/a&gt;, your Google Docs, Sheets, and Presentations will be downloaded and synced. Then you can open any Google Doc using Alfred (type ‘open’ followed by the filename), and it will open the Google Doc in the browser. I found this really quick and useful because it means I don’t have to have a browser open, go to Google Drive, and search for the file.&lt;/p&gt;
+&lt;p&gt;I was actually wondering if anyone has done a Google Drive Workflow for Alfred that would allow this functionality without having to download and sync all your files using the Google Drive app. It turns out no one has done it. I might take a look and see if I can integrate some of Google Drive’s &lt;a href=&quot;https://developers.google.com/drive/web/search-parameters&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;APIs&lt;/a&gt; with Alfred Workflows to see if this is possible.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;If you haven’t heard of Alfred, &lt;a href=&quot;http://www.alfredapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;check it out&lt;/a&gt;. It’s basically a Spo
+    
+    </summary>
+    
+      <category term="dev" scheme="http://meltuhamy.com/categories/dev/"/>
+    
+    
+      <category term="alfred" scheme="http://meltuhamy.com/tags/alfred/"/>
+    
+      <category term="dash" scheme="http://meltuhamy.com/tags/dash/"/>
+    
+      <category term="tools" scheme="http://meltuhamy.com/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TIL How a Java Debugger Works</title>
+    <link href="http://meltuhamy.com/dev/til-how-a-java-debugger-works/"/>
+    <id>http://meltuhamy.com/dev/til-how-a-java-debugger-works/</id>
+    <published>2015-02-13T10:22:26.000Z</published>
+    <updated>2016-02-06T19:15:45.000Z</updated>
+    
+    <content type="html">&lt;p&gt;I’m working with my friend on a project to implement a &lt;a href=&quot;https://github.com/jameslawson/webjdb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;web based debugger&lt;/a&gt; for Java projects. Today I learned all about the &lt;a href=&quot;http://docs.oracle.com/javase/7/docs/technotes/guides/jpda/architecture.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Java Debug Interface&lt;/a&gt; (JDI, which I like to pronounce as ‘Jedi’).&lt;/p&gt;
+&lt;p&gt;It’s essentially an event-driven request/response API that allows all the features that a debugger supports - step over, step into, breakpoints, stack inspection, etc. For example, say we want to set a breakpoint on a certain line number. First, we load the target class, then create a breakpoint request, wait for the response which tells us the breakpoint event was handled successfully. Now, we can look at the stack at this point and inspect variables.&lt;/p&gt;
+&lt;p&gt;Add some websocket wizardry, and you can hook it up with a web application.&lt;/p&gt;
+&lt;p&gt;If you’re interested in the details, head over to the GitHub project &lt;a href=&quot;https://github.com/jameslawson/webjdb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/jameslawson/webjdb&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;Why_a_web_based_Java_debugger_3F_Aren_u2019t_you_reinventing_the_wheel_3F&quot;&gt;&lt;a href=&quot;#Why_a_web_based_Java_debugger_3F_Aren_u2019t_you_reinventing_the_wheel_3F&quot; class=&quot;headerlink&quot; title=&quot;Why a web based Java debugger? Aren’t you reinventing the wheel?&quot;&gt;&lt;/a&gt;Why a web based Java debugger? Aren’t you reinventing the wheel?&lt;/h3&gt;&lt;p&gt;The idea isn’t to bring a fully-fledged code editor to the web. &lt;a href=&quot;http://www.hongkiat.com/blog/cloud-ide-developers/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Plenty&lt;/a&gt; of those exist. Instead, the idea is to quickly debug an existing Java project in the browser. This simplifies the task of the web app - we don’t care about writing code, we just care about a simple and purpose-built debugging experience. It’s also useful for people who use Vim or Sublime instead of an IDE. Finally, at the moment this is just a proof-of-concept experiment. We’ll see how it goes.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I’m working with my friend on a project to implement a &lt;a href=&quot;https://github.com/jameslawson/webjdb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;web
+    
+    </summary>
+    
+      <category term="dev" scheme="http://meltuhamy.com/categories/dev/"/>
+    
+    
+      <category term="debugging" scheme="http://meltuhamy.com/tags/debugging/"/>
+    
+      <category term="ide" scheme="http://meltuhamy.com/tags/ide/"/>
+    
+      <category term="java" scheme="http://meltuhamy.com/tags/java/"/>
+    
+      <category term="javascript" scheme="http://meltuhamy.com/tags/javascript/"/>
+    
+      <category term="jdb" scheme="http://meltuhamy.com/tags/jdb/"/>
+    
+      <category term="til" scheme="http://meltuhamy.com/tags/til/"/>
+    
+      <category term="tools" scheme="http://meltuhamy.com/tags/tools/"/>
+    
+      <category term="websockets" scheme="http://meltuhamy.com/tags/websockets/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Setting up my dev environment on a new Mac</title>
+    <link href="http://meltuhamy.com/dev/setting-up-my-dev-environment-on-a-new-mac/"/>
+    <id>http://meltuhamy.com/dev/setting-up-my-dev-environment-on-a-new-mac/</id>
+    <published>2015-02-12T10:00:27.000Z</published>
+    <updated>2016-02-10T20:07:46.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Here’s what I do when I get a new Mac / reinstall OSX.&lt;/p&gt;
+&lt;h3 id=&quot;The_absolute_essentials&quot;&gt;&lt;a href=&quot;#The_absolute_essentials&quot; class=&quot;headerlink&quot; title=&quot;The absolute essentials&quot;&gt;&lt;/a&gt;The absolute essentials&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Download &lt;a href=&quot;https://www.google.com/chrome/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;chrome&lt;/a&gt;. Already, everything is synced. Awesome.&lt;/li&gt;
+&lt;li&gt;Download &lt;a href=&quot;http://www.alfredapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Alfred&lt;/a&gt;. This is my go-to tool for opening just about anything. It’s so good I &lt;a href=&quot;http://meltuhamy.com/tech/dev/why-buy-alfred-powerpack/&quot; title=&quot;Why I bought the Alfred Powerpack&quot;&gt;actually bought&lt;/a&gt; the powerpack.&lt;/li&gt;
+&lt;li&gt;Download &lt;a href=&quot;http://spectacleapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Spectacle&lt;/a&gt; for easy and powerful window management.&lt;/li&gt;
+&lt;li&gt;Download &lt;a href=&quot;http://iterm2.com/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iTerm&lt;/a&gt;. This is my preferred terminal environment.&lt;/li&gt;
+&lt;li&gt;Set up a &lt;a href=&quot;http://computers.tutsplus.com/tutorials/how-to-launch-any-app-with-a-keyboard-shortcut--mac-31463&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;global keyboard shortcut&lt;/a&gt; for opening iTerm.&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&quot;http://brew.sh/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;homebrew&lt;/a&gt;. Once we have this, we have everything. When installing homebrew, it will also install the Apple Command Line Developer Tools. Yay.&lt;/li&gt;
+&lt;li&gt;brew install all the things. I normally brew install node first as I am a self-proclaimed JavaScript fanboy.&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&quot;http://www.sublimetext.com/3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sublime Text 3&lt;/a&gt;. Unless you’re a vim wizard. In that case ignore steps 1-7. Vim will &lt;a href=&quot;https://github.com/ryanss/vim-hackernews&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;suffice&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Make_the_terminal_awesome&quot;&gt;&lt;a href=&quot;#Make_the_terminal_awesome&quot; class=&quot;headerlink&quot; title=&quot;Make the terminal awesome&quot;&gt;&lt;/a&gt;Make the terminal awesome&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/images/pure-terminal-screenshot.png&quot; alt=&quot;Dat terminal do&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;oh-my-zsh&lt;/a&gt;. I can’t be bothered explaining the &lt;a href=&quot;http://www.slideshare.net/jaguardesignstudio/why-zsh-is-cooler-than-your-shell-16194692&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;benefits of zsh over bash&lt;/a&gt; but you’ll feel the power of zsh as soon as you start using it.&lt;/li&gt;
+&lt;li&gt;Set up &lt;a href=&quot;https://github.com/zsh-users/zsh-syntax-highlighting&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;zsh-syntax-highlighting&lt;/a&gt;. Gives instant visual feedback to tell you what you’re about to execute is correct. e.g. If you type the command “echo” incorrectly, it will show in red. If you type it correctly, it will show in green (like the above screenshot), &lt;em&gt;before&lt;/em&gt; you actually execute the command.&lt;/li&gt;
+&lt;li&gt;Download &lt;a href=&quot;https://github.com/chriskempson/tomorrow-theme/tree/master/iTerm2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tomorrow-night-eighties&lt;/a&gt; theme for iTerm2. To do this, save &lt;a href=&quot;https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/iTerm2/Tomorrow%20Night%20Eighties.itermcolors&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;this file&lt;/a&gt; as ‘Tomorrow Night Eighties.itermcolors’ and open it. iTerm2 will import it. Then, choose it in iTerm &amp;gt; Preferences &amp;gt; Profiles &amp;gt; Default &amp;gt; Colors &amp;gt; Load Presets…&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Set up &lt;a href=&quot;https://github.com/sindresorhus/pure&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;pure prompt&lt;/a&gt;.  This will add stuff like nicer git integration, timing functions (see screenshot above), and other neat tricks in your terminal. To do this, save &lt;a href=&quot;https://raw.githubusercontent.com/sindresorhus/pure/master/pure.zsh&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;this file&lt;/a&gt; as ‘pure.zsh’. Then run:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir ~/.oh-my-zsh/functions&amp;#10;ln -s /path/to/pure.zsh ~/.oh-my-zsh/functions/prompt_pure_setup&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Restart iTerm.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;At this point, I like to set up my zshrc aliases. Sublime Text is an important one. Add this to the end of your .zshrc file:&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;alias subl=&amp;#34;&amp;#39;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&amp;#39;&amp;#34;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Cool, you can now edit files in your terminal using the subl keyword! (Try it on folders too!)&lt;/p&gt;
+&lt;h3 id=&quot;Other_stuff&quot;&gt;&lt;a href=&quot;#Other_stuff&quot; class=&quot;headerlink&quot; title=&quot;Other stuff&quot;&gt;&lt;/a&gt;Other stuff&lt;/h3&gt;&lt;p&gt;Set up your ssh keys:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open a terminal and type ssh-keygen&lt;/li&gt;
+&lt;li&gt;Repeatedly press enter (feel free to give a password if you want)&lt;/li&gt;
+&lt;li&gt;Copy your public key and put it into your &lt;a href=&quot;https://github.com/settings/ssh&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github account&lt;/a&gt;.&lt;br&gt;&lt;code&gt;cat ~/.ssh/id_rsa.pub | pbcopy&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Set your git user name and email:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &amp;#34;Your Name&amp;#34;&amp;#10;git config --global user.email you@example.com&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Set up git lg alias, &lt;a href=&quot;https://coderwall.com/p/euwpig/a-better-git-log&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;a better git log&lt;/a&gt;:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global alias.lg &amp;#34;log --color --graph --pretty=format:&amp;#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;#38;lt;%an&amp;#38;gt;%Creset&amp;#39; --abbrev-commit&amp;#34;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;JIT_App_Installations&quot;&gt;&lt;a href=&quot;#JIT_App_Installations&quot; class=&quot;headerlink&quot; title=&quot;JIT App Installations.&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Just-in-time_compilation&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JIT&lt;/a&gt; App Installations.&lt;/h3&gt;&lt;p&gt;A lot of people install all the apps they could possibly need in the future right after they do a fresh install. I used to do this. Then I realised the majority of this time is time wasted. A better approach is to install apps on the fly when you need them. This will save you time, and also some precious disk space! Package and app managers (like npm or the App Store) make installations really quick and easy. So install the essentials and forget the rest!&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Here’s what I do when I get a new Mac / reinstall OSX.&lt;/p&gt;
+&lt;h3 id=&quot;The_absolute_essentials&quot;&gt;&lt;a href=&quot;#The_absolute_essentials&quot; class=&quot;hea
+    
+    </summary>
+    
+      <category term="dev" scheme="http://meltuhamy.com/categories/dev/"/>
+    
+    
+      <category term="alfred" scheme="http://meltuhamy.com/tags/alfred/"/>
+    
+      <category term="git" scheme="http://meltuhamy.com/tags/git/"/>
+    
+      <category term="homebrew" scheme="http://meltuhamy.com/tags/homebrew/"/>
+    
+      <category term="iterm" scheme="http://meltuhamy.com/tags/iterm/"/>
+    
+      <category term="osx" scheme="http://meltuhamy.com/tags/osx/"/>
+    
+      <category term="terminal" scheme="http://meltuhamy.com/tags/terminal/"/>
+    
+      <category term="tools" scheme="http://meltuhamy.com/tags/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TIL Watching People Code is a thing</title>
+    <link href="http://meltuhamy.com/tech/til-watching-people-code-is-a-thing/"/>
+    <id>http://meltuhamy.com/tech/til-watching-people-code-is-a-thing/</id>
+    <published>2015-02-11T07:47:14.000Z</published>
+    <updated>2016-02-06T19:15:45.000Z</updated>
+    
+    <content type="html">&lt;p&gt;So lately, thanks to Twitch, there’s been a new phenomenon on the interwebs to do with watching people play games. This craze got so big that large companies such as Google and Amazon &lt;a href=&quot;http://www.independent.co.uk/life-style/gadgets-and-tech/gaming/amazon-buys-twitch-for-970m-beating-google-to-tap-a-new-global-phenomenon-of-gamers-9691039.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;are willing to spend millions to buy Twitch&lt;/a&gt; because of how successful it is.&lt;/p&gt;
+&lt;p&gt;Well, it looks like watching people &lt;em&gt;write code live&lt;/em&gt; is now becoming a thing. There’s a growing reddit community (&lt;a href=&quot;http://www.reddit.com/r/WatchPeopleCode&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;/r/WatchPeopleCode&lt;/a&gt;) dedicated to it, and a website was made to list the current live streams from reddit: &lt;a href=&quot;http://www.watchpeoplecode.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;watchpeoplecode.com&lt;/a&gt;. The purpose is simple. You watch someone write code live online. Sometimes it’s someone giving a tutorial and speaking to the audience. Sometimes it is just someone working on their own project - maybe there’s better productivity when you know someone’s watching you code.&lt;/p&gt;
+&lt;p&gt;Who knows I might try it out one day. Or maybe in the future ‘watch people blog’ will become a thing. Who knows?&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;So lately, thanks to Twitch, there’s been a new phenomenon on the interwebs to do with watching people play games. This craze got so big 
+    
+    </summary>
+    
+      <category term="tech" scheme="http://meltuhamy.com/categories/tech/"/>
+    
+    
+      <category term="code" scheme="http://meltuhamy.com/tags/code/"/>
+    
+      <category term="reddit" scheme="http://meltuhamy.com/tags/reddit/"/>
+    
+      <category term="til" scheme="http://meltuhamy.com/tags/til/"/>
+    
+      <category term="twitch" scheme="http://meltuhamy.com/tags/twitch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TIL How easy it is to create a simple blog</title>
+    <link href="http://meltuhamy.com/tech/til-how-easy-it-is-to-create-a-simple-blog/"/>
+    <id>http://meltuhamy.com/tech/til-how-easy-it-is-to-create-a-simple-blog/</id>
+    <published>2015-02-10T11:16:13.000Z</published>
+    <updated>2016-02-07T21:49:57.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Just clicked on a button on my admin backend (I use &lt;a href=&quot;http://my.tsohost.com/aff.php?aff=2735&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TSO Host&lt;/a&gt;) and everything was set up! It even came bundled with &lt;a href=&quot;https://getclef.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Clef&lt;/a&gt;, which allows super easy two-factor authentication so it’s super secure. I haven’t used WordPress in a while, but it looks awesome, especially the cool new editor!&lt;/p&gt;
+&lt;p&gt;Welcome to my blog!&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Just clicked on a button on my admin backend (I use &lt;a href=&quot;http://my.tsohost.com/aff.php?aff=2735&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TSO H
+    
+    </summary>
+    
+      <category term="tech" scheme="http://meltuhamy.com/categories/tech/"/>
+    
+    
+      <category term="blog" scheme="http://meltuhamy.com/tags/blog/"/>
+    
+      <category term="clef" scheme="http://meltuhamy.com/tags/clef/"/>
+    
+      <category term="security" scheme="http://meltuhamy.com/tags/security/"/>
+    
+      <category term="til" scheme="http://meltuhamy.com/tags/til/"/>
+    
+      <category term="wordpress" scheme="http://meltuhamy.com/tags/wordpress/"/>
+    
+  </entry>
+  
+</feed>

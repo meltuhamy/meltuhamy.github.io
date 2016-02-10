@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular and Optimizely: A/B testing on SPAs | Mohamed&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="One of my first tasks at blinkbox books was to integrate Optimizely‘s powerful A/B testing service with our dynamic Angular JS single page web app. This blog post describes my experience and also show">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular and Optimizely: A/B testing on SPAs">
+<meta property="og:url" content="http://meltuhamy.com/dev/angular-and-optimizely-ab-testing-on-spas/index.html">
+<meta property="og:site_name" content="Mohamed's blog">
+<meta property="og:description" content="One of my first tasks at blinkbox books was to integrate Optimizely‘s powerful A/B testing service with our dynamic Angular JS single page web app. This blog post describes my experience and also show">
+<meta property="og:image" content="http://meltuhamy.com/images/optimizely-screenshot.png">
+<meta property="og:image" content="http://meltuhamy.com/images/optimizely-flow.png">
+<meta property="og:image" content="http://meltuhamy.com/images/xhr-toodamnhigh.jpg">
+<meta property="og:updated_time" content="2016-02-10T20:03:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular and Optimizely: A/B testing on SPAs">
+<meta name="twitter:description" content="One of my first tasks at blinkbox books was to integrate Optimizely‘s powerful A/B testing service with our dynamic Angular JS single page web app. This blog post describes my experience and also show">
+  
+  
+    <link rel="icon" href="favicon.png">
+  
+  
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41396975-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/logo.png)"></i><span class="site-title">Mohamed&#39;s blog</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/apps">Apps</a>
+        
+      </nav>
+      
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="http://gravatar.com/avatar/33b3f65df5d56232a23519d20d01f736?s=128"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+      
+      <div id="search-form-wrap">
+        
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://meltuhamy.com"></form>
+        
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">Home</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">Archives</a></td>
+        
+          <td><a class="main-nav-link" href="/categories">Categories</a></td>
+        
+          <td><a class="main-nav-link" href="/tags">Tags</a></td>
+        
+          <td><a class="main-nav-link" href="/about">About</a></td>
+        
+          <td><a class="main-nav-link" href="/apps">Apps</a></td>
+        
+        <td>
+          
+            <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="http://meltuhamy.com"></form>
+          
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+
+    <div class="outer">
+      
+        <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="http://gravatar.com/avatar/33b3f65df5d56232a23519d20d01f736?s=128">
+      <h2 id="name">Mohamed Eltuhamy</h2>
+      <h3 id="title">Web Developer</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>London, UK</span>
+      <a id="follow" href="https://github.com/meltuhamy">FOLLOW</a>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        10
+        <span>posts</span>
+      </div>
+      <div class="article-info-block">
+        42
+        <span>tags</span>
+      </div>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+          <td><a href="https://github.com/meltuhamy" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+          
+          <td><a href="https://twitter.com/meltuhamy" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+          
+          <td><a href="https://www.linkedin.com/in/meltuhamy" target="_blank" title="linkedin"><i class="fa fa-linkedin"></i></a></td>
+          
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+          
+        </tr>
+      </table>
+    </div>
+    
+    
+  </div>
+</aside>
+
+      
+      <section id="main"><article id="post-angular-and-optimizely-ab-testing-on-spas" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular and Optimizely: A/B testing on SPAs
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/dev/angular-and-optimizely-ab-testing-on-spas/">
+      <time datetime="2015-03-05T12:08:23.000Z" itemprop="datePublished">March 5th 2015</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/dev/">dev</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>One of my first tasks at <a href="https://www.blinkboxbooks.com/" target="_blank" rel="external">blinkbox books</a> was to integrate <a href="https://www.optimizely.com/" target="_blank" rel="external">Optimizely</a>‘s powerful A/B testing service with our dynamic Angular JS single page web app. This blog post describes my experience and also shows how this can be done in a way that eliminates <a href="http://en.wikipedia.org/wiki/Flash_of_unstyled_content" target="_blank" rel="external">flashes of unstyled content (fooc)</a>.</p>
+<h3 id="How_Optimizely_works"><a href="#How_Optimizely_works" class="headerlink" title="How Optimizely works"></a>How Optimizely works</h3><p><img src="/images/optimizely-screenshot.png" alt="Optimizely&#39;s WYSIWYG editor (screenshot from optimizely.com)"></p>
+<p>Optimizely is a <a href="https://www.optimizely.com/ab-testing/" target="_blank" rel="external">A/B testing</a> service that allows creating one or more variations of a page, and targeting those variations on a percentage of the page’s visitors. The way it works is simple. Optimizely provides a WYSIWYG interface which allows a user (e.g. the marketing team) to make changes to a variation. The changes translate into some jQuery code. This code is embedded into a JavaScript snippet that is inserted into the page.<br>[<img src="/images/optimizely-flow.png" alt="How Optimizley changes the page"></p>
+<h3 id="Dynamically_updating_dynamic_single_page_ecommerce_websites"><a href="#Dynamically_updating_dynamic_single_page_ecommerce_websites" class="headerlink" title="Dynamically updating dynamic single page ecommerce websites"></a>Dynamically updating dynamic single page ecommerce websites</h3><p>Optimizely works great if the page is rendered on the server, and user interactions are simply page changes. In other words, the jQuery snippet that changes the page would be applied once the page is loaded.</p>
+<p>But what if the page loads a single page application (SPA)? In that case, Optimizely doesn’t know if the page has changed, because that is controlled by JavaScript instead of page requests. This is explained in detail in the <a href="https://help.optimizely.com/hc/en-us/articles/203326524-AngularJS-Backbone-js-and-other-Single-Page-Applications" target="_blank" rel="external">support pages</a>. To solve this, Optimizely provides an API that can be used to manually tell Optimizely that a page has changed. We simply call <code>optimizely.push(&#39;activate&#39;)</code> to tell Optimizely to activate any targeted by the current URL.</p>
+<p>However, SPAs aren’t just about changing pages dynamically. They can involve very dynamic views and components that asynchronously request content dynamically. For example, if the user scrolls down, more items can be dynamically requested and displayed. To make use of Optimizely’s WYSIWYG editor, we needed to support <em>any</em> update of <em>any</em> part of the page at <em>any</em> url. This would mean that we could pass Optimizely to the marketing team without worrying about making any kind of code change to make it work. This post is an overview of what I did to get Optimizely to correctly apply modifications to any part of a SPA.</p>
+<h3 id="The_naive_solution_3A_activate_experiments_when_the_page_changes"><a href="#The_naive_solution_3A_activate_experiments_when_the_page_changes" class="headerlink" title="The naive solution: activate experiments when the page changes"></a>The naive solution: activate experiments when the page changes</h3><p>There’s a few events that we could hook into and activate Optimizely experiments. Each of these solutions fixes a problem but introduces another problem. Nevertheless, let’s talk through each of them.</p>
+<ul>
+<li><p><a href="https://docs.angularjs.org/api/ngRoute/service/$route" target="_blank" rel="external">$routeChangeSuccess</a>: The obvious one. Every time the page changes, we need to apply any experiments that might be associated with the new URL. We call <code>optimizely.push(&#39;activate&#39;)</code> and this will take care of everything for us. The problem with this is that there might be angular directives and embedded modules in the page which load dynamically. In this case, the Optimizely snippet would be applied, but no actual changes would be made because the required elements would not be loaded yet.</p>
+</li>
+<li><p><a href="https://docs.angularjs.org/api/ng/directive/ngInclude" target="_blank" rel="external">$includeContentLoaded</a>: Handling dynamic templates. To fix the problem above, we could listen for this event and call <code>optimizely.push(&#39;activate&#39;)</code> every time it fires. This will work but only for the first time that the template is loaded. For example, if we load a template for one ‘tab’, then switch tabs, the second time the user visits the first tab $includeContentLoaded will <em>not</em> be fired, as it is already loaded and cached by angular. The other problem is angular directives that have external templates will not trigger this event when their templates are loaded.</p>
+</li>
+<li><p><a href="https://github.com/angular/angular.js/blob/master/src/ng/browser.js#L75" target="_blank" rel="external">$browser.notifyWhenNoOutstandingRequests</a>: An estimate of when the page has finished ‘loading’. This private API is what is used by <a href="https://github.com/angular/protractor" target="_blank" rel="external">protractor</a> for end-to-end tests. If we register a callback that activates Optimizely when the page has finished loading according to angular, this would apply any page modifications correctly to the page. However, the drawback is that it will take some time for the page to finish loading and so there will be a very obvious flash of un-styled content.</p>
+</li>
+</ul>
+<h3 id="A_more_comprehensive_solution_3A_hook_into_the_digest_cycle"><a href="#A_more_comprehensive_solution_3A_hook_into_the_digest_cycle" class="headerlink" title="A more comprehensive solution: hook into the digest cycle."></a>A more comprehensive solution: hook into the digest cycle.</h3><p>What if we knew roughly when the DOM has changed by Angular? We could then apply the Optimizely changes every time Angular changed the DOM. Luckily, we do know when the DOM has changed - in the <a href="http://angular-tips.com/blog/2013/08/watch-how-the-apply-runs-a-digest/" target="_blank" rel="external">digest</a> cycle. We can simply call the activate method every time angular executes the digest cycle. And this is easily done by setting up an infinite watch, like below:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> force = <span class="literal">true</span>;</span><br><span class="line">$rootScope.$watch(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    force = !force;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> force;</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  $<span class="built_in">window</span>.optimizely.push([<span class="string">'activate'</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>I found that having this solution along with listening for the $routeChangeSuccess event worked best, but there are still some problems…</p>
+<h4 id="Applying_an_experiment_multiple_times"><a href="#Applying_an_experiment_multiple_times" class="headerlink" title="Applying an experiment multiple times."></a>Applying an experiment multiple times.</h4><p>One could ask, surely we’re calling the Optimizely API dozens of times. Is this wise? Well, it turns out that the Optimizely snippets are idempotent - meaning if we call it multiple times, it won’t change the page multiple times.</p>
+<p><img src="/images/xhr-toodamnhigh.jpg" alt="Too many XHR requests"></p>
+<p>However, I did notice that several XHR requests ended up being called because of Optimizely’s logging feature. This is bad. Every time we call <code>optimizely.push(&#39;activate&#39;)</code>, an XHR request is queued. This is not only bad network usage, it will also drain the battery and is just pure evil. We had to have a workaround. It would be nice if Optimizely allowed us to disable logging for a single page, but until then, I implemented an incredibly hacky workaround. The solution: monkey-patch the XHR.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">patchXHR</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> originalOpen = <span class="built_in">window</span>.XMLHttpRequest.prototype.open;</span><br><span class="line">  <span class="keyword">var</span> originalSend = <span class="built_in">window</span>.XMLHttpRequest.prototype.send;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> prevUrl;</span><br><span class="line">  <span class="built_in">window</span>.XMLHttpRequest.prototype.open = <span class="function"><span class="keyword">function</span> (<span class="params">type, uri</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (uri.lastIndexOf(<span class="string">'log.optimizely.com'</span>) &gt;= <span class="number">0</span> &amp;&amp; fromDigest)&#123;</span><br><span class="line">      <span class="comment">// we set this up in order to intercept the request in the 'send' function.</span></span><br><span class="line">      <span class="keyword">this</span>._requestURI = uri;</span><br><span class="line">      fromDigest = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    originalOpen.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>.XMLHttpRequest.prototype.send = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span>._requestURI === <span class="string">'string'</span></span><br><span class="line">        &amp;&amp; <span class="keyword">this</span>._requestURI.lastIndexOf(<span class="string">'log.optimizely.com'</span>) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> currentUrl = $location.path();</span><br><span class="line">      <span class="keyword">if</span> (currentUrl === prevUrl) &#123;</span><br><span class="line">        <span class="comment">// we prevent the request if this was the same page</span></span><br><span class="line">        <span class="keyword">this</span>.abort();</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// we allow requests on actual page changes.</span></span><br><span class="line">        prevUrl = currentUrl;</span><br><span class="line">        originalSend.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// we allow all non-optimizely requests</span></span><br><span class="line">      originalSend.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This just about solves the requests problem, but there are <em>still</em> some other problems…</p>
+<h3 id="Undoing_an_experiment"><a href="#Undoing_an_experiment" class="headerlink" title="Undoing an experiment"></a>Undoing an experiment</h3><p>What if we had an experiment that removed the navigation bar, or the footer, or any other common element in our website? For example, what if we wanted to remove the page footer but only in the ‘About Us’ page, and not any other pages? Well, because we’re using a modular single page application, once we remove the element (using the Optimizely snippet), it’ll be removed from our whole application until the user reloads! This is because common elements like the page header and footer don’t change between page changes. All the routing is done in JavaScript, remember?</p>
+<p>Unfortunately, there wasn’t any elegant way to fix this. We decided to simply not allow these types of changes unless they are app-wide. It would have been nice if there was a way of undoing a snippet, but this would definitely be a challenge (e.g. if you remove an element and not hide it, then re-insert it, how do you ensure angular still knows about it? What about memory and performance considerations).</p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>Getting third party services to work with a SPA is hard. Optimizely should invest engineering effort to make it work with at least the most popular frameworks such as Angular, or at least provide more fine grained APIs to allow users to integrate manually.</p>
+<p>While the solution of using Angular’s digest cycle worked, it isn’t great and smells like a hack. There needs to be a better way of applying A/B testing experiments on a single page app, and this would require a lot of thought.</p>
+<p>Having said that, for very simple web apps, the approach described above would probably be overkill. In fact, for most simple applications, using the $routeChangeSuccess approach would work just fine. However, if your app is dynamic and has many components and directives which are also dynamic, getting Optimizely to work will need a bit more hacking - and this article was supposed to be an overview of what we did at blinkbox to get it to work.</p>
+<h3 id="Show_me_the_code"><a href="#Show_me_the_code" class="headerlink" title="Show me the code"></a>Show me the code</h3><p>To do all of the above (and a bit more), I wrote an Angular service for the <a href="https://github.com/blinkboxbooks/client-web-app.js" target="_blank" rel="external">blinkbox books application</a>. You can see the service on <a href="https://github.com/blinkboxbooks/client-web-app.js/blob/master/app/scripts/services/optimizely_service.js" target="_blank" rel="external">GitHub</a>. I’m also thinking about taking this out and making it its own service so anyone can drop it into their app.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://meltuhamy.com/dev/angular-and-optimizely-ab-testing-on-spas/" data-id="cikhbe5jm002uzmtltdwxmsif" class="article-share-link">Share</a>
+      
+        <a href="http://meltuhamy.com/dev/angular-and-optimizely-ab-testing-on-spas/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ab-testing/">ab testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blinkbox/">blinkbox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/optimizely/">optimizely</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spa/">spa</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/dev/ionic-speed-writing-a-prayer-times-smartphone-app-in-a-day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Ionic Speed: Writing a prayer times smartphone app in a day
+        
+      </div>
+    </a>
+  
+  
+    <a href="/dev/why-buy-alfred-powerpack/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Why I bought the Alfred Powerpack</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</section>
+      
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">recents</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/uncategorized/moving-to-hexo/" class="thumbnail">
+  
+    <span style="background-image:url(/images/hexo-logo.svg)" alt="Moving to hexo" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/uncategorized/moving-to-hexo/" class="title">Moving to hexo</a></p>
+              <p class="item-date"><time datetime="2016-02-07T21:48:09.000Z" itemprop="datePublished">February 7th 2016</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/productivity/coding-while-fasting/" class="thumbnail">
+  
+    <span style="background-image:url(/images/thinking-food.jpg
+)" alt="Coding While Fasting" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/productivity/">productivity</a></p>
+              <p class="item-title"><a href="/productivity/coding-while-fasting/" class="title">Coding While Fasting</a></p>
+              <p class="item-date"><time datetime="2015-06-23T18:58:00.000Z" itemprop="datePublished">June 23rd 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/dev/a-better-ionic-starter-app/" class="thumbnail">
+  
+    <span style="background-image:url(/images/ionitron-avatar.png)" alt="A better Ionic starter app" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/dev/">dev</a></p>
+              <p class="item-title"><a href="/dev/a-better-ionic-starter-app/" class="title">A better Ionic starter app</a></p>
+              <p class="item-date"><time datetime="2015-03-22T12:32:12.000Z" itemprop="datePublished">March 22nd 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/dev/ionic-speed-writing-a-prayer-times-smartphone-app-in-a-day/" class="thumbnail">
+  
+    <span style="background-image:url(/images/salahtimes-screenshot-614x1024.png
+)" alt="Ionic Speed: Writing a prayer times smartphone app in a day" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/dev/">dev</a></p>
+              <p class="item-title"><a href="/dev/ionic-speed-writing-a-prayer-times-smartphone-app-in-a-day/" class="title">Ionic Speed: Writing a prayer times smartphone app in a day</a></p>
+              <p class="item-date"><time datetime="2015-03-11T14:09:54.000Z" itemprop="datePublished">March 11th 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/dev/angular-and-optimizely-ab-testing-on-spas/" class="thumbnail">
+  
+    <span style="background-image:url(/images/optimizely-screenshot.png
+)" alt="Angular and Optimizely: A/B testing on SPAs" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/dev/">dev</a></p>
+              <p class="item-title"><a href="/dev/angular-and-optimizely-ab-testing-on-spas/" class="title">Angular and Optimizely: A/B testing on SPAs</a></p>
+              <p class="item-date"><time datetime="2015-03-05T12:08:23.000Z" itemprop="datePublished">March 5th 2015</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/dev/">dev</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/productivity/">productivity</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tech/">tech</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ab-testing/">ab testing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/alfred/">alfred</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blinkbox/">blinkbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/clef/">clef</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/code/">code</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coding/">coding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/coffee/">coffee</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dash/">dash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debugging/">debugging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fasting/">fasting</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/food/">food</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homebrew/">homebrew</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ide/">ide</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ionic/">ionic</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/islam/">islam</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iterm/">iterm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jdb/">jdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/karma/">karma</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/optimizely/">optimizely</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/osx/">osx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prayer/">prayer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramadan/">ramadan</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reddit/">reddit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/security/">security</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spa/">spa</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/terminal/">terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/til/">til</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/twitch/">twitch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/websockets/">websockets</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">tag cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ab-testing/" style="font-size: 10px;">ab testing</a> <a href="/tags/alfred/" style="font-size: 15px;">alfred</a> <a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/app/" style="font-size: 10px;">app</a> <a href="/tags/blinkbox/" style="font-size: 10px;">blinkbox</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/clef/" style="font-size: 10px;">clef</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/coding/" style="font-size: 10px;">coding</a> <a href="/tags/coffee/" style="font-size: 10px;">coffee</a> <a href="/tags/dash/" style="font-size: 10px;">dash</a> <a href="/tags/debugging/" style="font-size: 10px;">debugging</a> <a href="/tags/fasting/" style="font-size: 10px;">fasting</a> <a href="/tags/food/" style="font-size: 10px;">food</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/homebrew/" style="font-size: 10px;">homebrew</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/ionic/" style="font-size: 15px;">ionic</a> <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/islam/" style="font-size: 10px;">islam</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jdb/" style="font-size: 10px;">jdb</a> <a href="/tags/karma/" style="font-size: 10px;">karma</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/optimizely/" style="font-size: 10px;">optimizely</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/prayer/" style="font-size: 10px;">prayer</a> <a href="/tags/ramadan/" style="font-size: 10px;">ramadan</a> <a href="/tags/reddit/" style="font-size: 10px;">reddit</a> <a href="/tags/security/" style="font-size: 10px;">security</a> <a href="/tags/spa/" style="font-size: 10px;">spa</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/twitch/" style="font-size: 10px;">twitch</a> <a href="/tags/websockets/" style="font-size: 10px;">websockets</a> <a href="/tags/wordpress/" style="font-size: 15px;">wordpress</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 - 2016 Mohamed Eltuhamy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script>
+  var disqus_shortname = 'meltuhamy';
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
