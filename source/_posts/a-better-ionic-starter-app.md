@@ -1,5 +1,7 @@
 ---
 title: A better Ionic starter app
+thumbnail: /images/ionitron-avatar.png
+banner: /images/angularjs-ionic-framework.jpg
 tags:
   - gulp
   - ionic
@@ -197,3 +199,6 @@ and we can use it in any template:
 
 Feel free to work with it on GitHub:
 [https://github.com/meltuhamy/ionic-base](https://github.com/meltuhamy/ionic-base).
+
+### Credits
+Post thumbnail and image are from the Ionic project.
