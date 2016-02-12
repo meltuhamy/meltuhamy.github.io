@@ -10,6 +10,7 @@ id: 103
 categories:
   - dev
 date: 2015-03-22 12:32:12
+alias: tech/dev/a-better-ionic-starter-app/
 ---
 
 _TLDR_: I wrote a nice ionic starter app that anyone can use as a boilerplate. [You can find it on GitHub](https://github.com/meltuhamy/ionic-base).

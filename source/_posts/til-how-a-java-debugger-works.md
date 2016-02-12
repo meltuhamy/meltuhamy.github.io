@@ -13,6 +13,7 @@ id: 35
 categories:
   - dev
 date: 2015-02-13 10:22:26
+alias: tech/dev/til-how-a-java-debugger-works/
 ---
 
 I'm working with my friend on a project to implement a [web based debugger](https://github.com/jameslawson/webjdb) for Java projects. Today I learned all about the [Java Debug Interface](http://docs.oracle.com/javase/7/docs/technotes/guides/jpda/architecture.html) (JDI, which I like to pronounce as 'Jedi').

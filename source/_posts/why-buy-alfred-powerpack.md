@@ -8,6 +8,7 @@ id: 38
 categories:
   - dev
 date: 2015-02-14 10:00:32
+alias: tech/dev/why-buy-alfred-powerpack/
 ---
 
 If you haven't heard of Alfred, [check it out](http://www.alfredapp.com/). It's basically a Spotlight replacement with a lot of power.

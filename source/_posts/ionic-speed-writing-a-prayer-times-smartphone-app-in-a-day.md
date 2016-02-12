@@ -10,6 +10,7 @@ id: 81
 categories:
   - dev
 date: 2015-03-11 14:09:54
+alias: tech/dev/ionic-speed-writing-a-prayer-times-smartphone-app-in-a-day/
 ---
 
 _Update:_ I'm happy to announce the app has been released on the Google Play Store. [Check it out!](http://goo.gl/EhJdx1)

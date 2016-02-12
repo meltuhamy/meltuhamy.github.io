@@ -12,6 +12,7 @@ id: 15
 categories:
   - dev
 date: 2015-02-12 10:00:27
+alias: tech/dev/setting-up-my-dev-environment-on-a-new-mac/
 ---
 
 Here's what I do when I get a new Mac / reinstall OSX.

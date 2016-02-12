@@ -10,6 +10,7 @@ id: 52
 categories:
   - dev
 date: 2015-03-05 12:08:23
+alias: tech/dev/angular-and-optimizely-ab-testing-on-spas/
 ---
 
 One of my first tasks at [blinkbox books](https://www.blinkboxbooks.com/) was to integrate [Optimizely](https://www.optimizely.com/)'s powerful A/B testing service with our dynamic Angular JS single page web app. This blog post describes my experience and also shows how this can be done in a way that eliminates [flashes of unstyled content (fooc)](http://en.wikipedia.org/wiki/Flash_of_unstyled_content).
