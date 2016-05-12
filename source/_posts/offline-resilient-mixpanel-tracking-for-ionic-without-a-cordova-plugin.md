@@ -1,6 +1,6 @@
 ---
 title: Offline-resilient Mixpanel tracking for Ionic without a Cordova plugin
-date: 2016-04-25 21:48:09
+date: 2016-05-12 19:30:00
 thumbnail: /images/goneoffline.png
 tags:
   - android
