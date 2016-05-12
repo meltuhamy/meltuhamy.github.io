@@ -102,7 +102,7 @@ Periodically, we attempt to send 4 items in the queue. If the send succeeded, we
 
 ```
 
-### Closing time? Save the queue for later
+### App closing? Save the queue for later
 
 We need to persist the queue when the user switches app. This is because we don't want to loose all the things in the queue when the user switches or even closes the app. We can use [localStorage](https://developer.mozilla.org/en/docs/Web/API/Window/localStorage) to save the data. Every time the user switches or closes the app, we save the queue onto local storage. Then when the user opens the app again we restore the queue from local storage and continue periodically processing the queue.
 
@@ -182,8 +182,10 @@ df 2b 53 9c 94 42 55 85 a8 1a ac a1 68 d2 74 01
 ```
 which is approximately 193 bytes. That's a 14% reduction. We can therefore afford to store more events to be stored.
 
+Alternatively, you can use another storage method such as [indexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) or better still, use [localForage](http://mozilla.github.io/localForage/) which has decent fallback to localStorage. I used localStorage above because of its simple, cross-platform, synchronous API.
+
 ## Show me the code!
-It would be an interesting project to create a stand-alone JavaScript library, but I think it would be best to contribute it to [Mixpanel's open-source library](https://github.com/mixpanel/mixpanel-js) so that their JavaScript library supports it out of the box. Instead, this blog post was about how to implement it yourself - to show that there's not a lot going on under the hood. In fact, if you read the mixpanel library, you'll see that it really isn't that complicated.
+It would be an interesting project to create a stand-alone JavaScript library, but I think it would be best to contribute it to [Mixpanel's open-source library](https://github.com/mixpanel/mixpanel-js) so that their JavaScript library supports it out of the box. Instead, this blog post was about how to implement it yourself - to show that there's not a lot going on under the hood. In fact, if you read the mixpanel library [source code](https://github.com/mixpanel/mixpanel-js/blob/master/src/mixpanel-core.js), you'll see that it really isn't that complicated.
 
 However, if you'd like to see a working implementation of the above snippets, do have a look at the Angular service I created for my prayer times app. This can be found [here](https://github.com/meltuhamy/belfastsalah/blob/master/www/js/svc/mixpanel.js).
 
