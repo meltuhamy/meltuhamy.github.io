@@ -1,6 +1,5 @@
 ---
 title: Coding While Fasting Part 2
-date: 2016-04-17 10:17:26
 tags:
   - coding
   - coffee
@@ -15,7 +14,10 @@ categories:
   - productivity
 banner: /images/ramadan-dates-banner.png
 thumbnail: /images/dates-cup.jpg
+date: 2016-06-06 21:17:00
 ---
+
+_[Read Part 1: General productivity tips for coding during Ramadan](/productivity/coding-while-fasting/)_
 
 The assumption is that when you're _tired_, you're more likely to lose focus and therefore make mistakes. It is important to combat this tendency by first not blaming your lack of productivity and mistakes on fasting, and second by finding and using productivity tools and techniques. In the previous post, [I mentioned 5 tips that can help you with general productivity during Ramadan](/productivity/coding-while-fasting/). In this post, I focus on technical techniques and tools to help you be a more productive coder during Ramadan.
 

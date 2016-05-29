@@ -7,6 +7,8 @@ tags:
   - wordpress
   - blog
   - markdown
+categories:
+  - tech
 ---
 
 Today I migrated my blog from Wordpress to [Hexo](https://hexo.io/).

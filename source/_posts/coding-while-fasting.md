@@ -13,6 +13,8 @@ categories:
 date: 2015-06-23 19:58:00
 ---
 
+_Update: [Read some more technical tips in part 2](/productivity/coding-while-fasting-part-2/)_
+
 Some say you can't be productive in Ramadan. I disagree. You can be _more_<sup>*</sup> productive while fasting, and it can help you stay focused. Here's how I do it.
 
 <small><sup>*</sup>Coding while fasting made me a really _fast_ coder. Ok that was terrible.</small>

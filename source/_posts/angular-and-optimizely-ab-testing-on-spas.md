@@ -20,7 +20,7 @@ One of my first tasks at [blinkbox books](https://www.blinkboxbooks.com/) was to
 ![Optimizely's WYSIWYG editor (screenshot from optimizely.com)](/images/optimizely-screenshot.png)
 
 Optimizely is a [A/B testing](https://www.optimizely.com/ab-testing/) service that allows creating one or more variations of a page, and targeting those variations on a percentage of the page's visitors. The way it works is simple. Optimizely provides a WYSIWYG interface which allows a user (e.g. the marketing team) to make changes to a variation. The changes translate into some jQuery code. This code is embedded into a JavaScript snippet that is inserted into the page.
-[![How Optimizley changes the page](/images/optimizely-flow.png)
+![How Optimizley changes the page](/images/optimizely-flow.png)
 
 ### Dynamically updating dynamic single page ecommerce websites
 
