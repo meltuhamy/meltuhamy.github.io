@@ -14,7 +14,7 @@ categories:
   - productivity
 banner: /images/ramadan-dates-banner.png
 thumbnail: /images/dates-cup.jpg
-date: 2016-06-14 21:55:00
+date: 2016-06-14 21:56:00
 ---
 
 _[Read Part 1: General productivity tips for coding during Ramadan](/productivity/coding-while-fasting/)_
