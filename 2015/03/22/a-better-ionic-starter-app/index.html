@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>A better Ionic starter app - Mohamed&#39;s blog</title>
+
+
+    <meta name="description" content="TLDR: I wrote a nice ionic starter app that anyone can use as a boilerplate. You can find it on GitHub. While I was writing my first Ionic app, I realised there are a lot of tools from front end web d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A better Ionic starter app">
+<meta property="og:url" content="http://yoursite.com/2015/03/22/a-better-ionic-starter-app/index.html">
+<meta property="og:site_name" content="Mohamed&#39;s blog">
+<meta property="og:description" content="TLDR: I wrote a nice ionic starter app that anyone can use as a boilerplate. You can find it on GitHub. While I was writing my first Ionic app, I realised there are a lot of tools from front end web d">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/ionitron-avatar.png">
+<meta property="article:published_time" content="2015-03-22T12:32:12.000Z">
+<meta property="article:modified_time" content="2020-01-01T11:31:31.432Z">
+<meta property="article:author" content="Mohamed Eltuhamy">
+<meta property="article:tag" content="gulp">
+<meta property="article:tag" content="ionic">
+<meta property="article:tag" content="karma">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/ionitron-avatar.png">
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="A better Ionic starter app" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                Mohamed&#39;s blog
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+                <a class="navbar-item"
+                href="/apps">Apps</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Github" href="https://github.com/meltuhamy">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/ionitron-avatar.png" alt="A better Ionic starter app">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2015-03-22T12:32:12.000Z">2015-03-22</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/dev/">dev</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes read (About 1135 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                A better Ionic starter app
+            
+        </h1>
+        <div class="content">
+            <p><em>TLDR</em>: I wrote a nice ionic starter app that anyone can use as a boilerplate. <a href="https://github.com/meltuhamy/ionic-base">You can find it on GitHub</a>.</p>
+<p>While I was writing <a href="http://meltuhamy.com/tech/dev/ionic-speed-writing-a-prayer-times-smartphone-app-in-a-day/">my first Ionic app</a>, I realised there are a lot of tools from front end web development that can be added to the project. The <a href="https://github.com/driftyco/ionic-starter-tabs">default starter app</a> was a bit too simple.</p>
+<h3 id="A-better-file-structure"><a href="#A-better-file-structure" class="headerlink" title="A better file structure"></a>A better file structure</h3><p>In the default starter app, every angular component was in its own file.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">js</span><br><span class="line">├── app.js</span><br><span class="line">├── controllers.js</span><br><span class="line">└── services.js</span><br></pre></td></tr></table></figure>
+
+<p>Opening up <code>controllers.js</code> will show all the controllers of our app. What if we had many? I prefer having a file for each controller.</p>
+<p>A better starter app should have each controller, service, constant, etc. in its own file. That way, we can quickly get to the code we’re looking for later on.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">js</span><br><span class="line">├── app.js</span><br><span class="line">├── controllers</span><br><span class="line">│   ├── account.ctrl.js</span><br><span class="line">│   ├── chatdetail.ctrl.js</span><br><span class="line">│   ├── chats.ctrl.js</span><br><span class="line">│   └── dash.ctrl.js</span><br><span class="line">└── services</span><br><span class="line">    └── chats.service.js</span><br></pre></td></tr></table></figure>
+
+<p>The suffix in the names (<code>.ctrl.js</code>) is optional, but allows us to distinguish between controllers/services with the same name.</p>
+<h3 id="Unit-testing-support-with-Karma"><a href="#Unit-testing-support-with-Karma" class="headerlink" title="Unit testing support with Karma"></a>Unit testing support with Karma</h3><p>I was surprised to find that the default project didn’t have unit test support. This was strange because Angular already had really good unit and end to end testing support by default. To fix this, we simply need to add and <code>karma.conf.js</code>. Most of it is the default settings (simply run <code>karma init</code>, make sure you have <a href="http://karma-runner.github.io">karma</a> installed), with the following included files:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  files: [</span><br><span class="line">    <span class="string">"www/lib/ionic/js/ionic.bundle.js"</span>,</span><br><span class="line">    <span class="string">"node_modules/angular-mocks/angular-mocks.js"</span>,</span><br><span class="line">    <span class="string">"www/lib/ngCordova/dist/ng-cordova.js"</span>,</span><br><span class="line">    <span class="string">"www/lib/ngCordova/dist/ng-cordova-mocks.js"</span>,</span><br><span class="line"></span><br><span class="line">    <span class="string">"test/**/*.test.js"</span>,</span><br><span class="line">    <span class="string">"src/js/**/*.js"</span></span><br><span class="line">  ];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Now, we can run <code>karma start</code> to run the unit tests. We can also update our package.json to include a testing step. This is useful when using travis for continuous builds.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Running <code>npm test</code> will run the unit tests.</p>
+<h3 id="Concatenating-uglifiying-and-building-our-app"><a href="#Concatenating-uglifiying-and-building-our-app" class="headerlink" title="Concatenating, uglifiying and building our app"></a>Concatenating, uglifiying and building our app</h3><p>We could create an optimized app by putting everything in one file and reducing the number of requests (even if they are all local). To do this, we use a few gulp plugins.</p>
+<p>First, we move all our <em>source</em> files into a new folder called <code>src</code>. The plan is to combine all these source files into a single <code>app.js</code> file that will go in the <code>www</code> folder. Here’s how we do it:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">"build"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp</span><br><span class="line">    .src(<span class="string">"src/js/**/*.js"</span>)</span><br><span class="line">    .pipe(sourcemaps.init())</span><br><span class="line">    .pipe(</span><br><span class="line">      ngAnnotate(&#123;</span><br><span class="line">        single_quotes: <span class="literal">true</span></span><br><span class="line">      &#125;)</span><br><span class="line">    )</span><br><span class="line">    .pipe(concat(<span class="string">"app.js"</span>))</span><br><span class="line">    .pipe(uglify())</span><br><span class="line">    .pipe(sourcemaps.write())</span><br><span class="line">    .pipe(header(<span class="string">'window.VERSION = "&lt;%= pkg.version %&gt;;";'</span>, &#123; <span class="attr">pkg</span>: pkg &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">"www/dist"</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>The gulp task is easy to read, but there’s a few things we didn’t mention:</p>
+<ul>
+<li>The <code>sourcemaps</code> plugin. Here, we write the sourcemap to the same source file. This will allow us to debug the files more naturally in chrome developer tools, even though they are uglified and concatenated into a single file.</li>
+<li>The <code>ngAnnotate</code> plugin. We use this to allow us to minify Angular shorthand injections. E.g. <code>app.controller(&#39;MyCtrl&#39;, function($scope){});</code> becomes <code>controller(&#39;MyCtrl&#39;, [&#39;$scope&#39;, function($scope){}]);</code></li>
+<li>The <code>header</code> plugin. We use this to smartly insert the app’s version number inside the app itself. We talk about versioning later in this article.</li>
+<li>Finally, we write to the <code>www/dist</code> folder. Putting the output into another folder allows us to modify <code>.gitignore</code> so we don’t version the generated files.</li>
+</ul>
+<p>While we’re here, we can also modify the <code>sass</code> gulp task so it also goes into the <code>www/dist</code> folder.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">"sass"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">done</span>) </span>&#123;</span><br><span class="line">  gulp</span><br><span class="line">    .src(<span class="string">"src/scss/ionic.app.scss"</span>)</span><br><span class="line">    .pipe(sass())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">"./www/dist/css/"</span>))</span><br><span class="line">    .pipe(</span><br><span class="line">      minifyCss(&#123;</span><br><span class="line">        keepSpecialComments: <span class="number">0</span></span><br><span class="line">      &#125;)</span><br><span class="line">    )</span><br><span class="line">    .pipe(rename(&#123; <span class="attr">extname</span>: <span class="string">".min.css"</span> &#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">"./www/dist/css/"</span>))</span><br><span class="line">    .on(<span class="string">"end"</span>, done);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Faster-page-changing-using-Angular’s-templateCache"><a href="#Faster-page-changing-using-Angular’s-templateCache" class="headerlink" title="Faster page changing using Angular’s $templateCache"></a>Faster page changing using Angular’s <code>$templateCache</code></h4><p>When switching between ‘pages’ in a SPA, new template file requests are made. If we move all these template files into a single file and pre-cache it, these requests can be saved. There’s a gulp task for that.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">"templates"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp</span><br><span class="line">    .src(<span class="string">"src/templates/**/*.html"</span>)</span><br><span class="line">    .pipe(</span><br><span class="line">      templateCache(<span class="string">"templates.js"</span>, &#123; <span class="attr">module</span>: <span class="string">"starter"</span>, <span class="attr">root</span>: <span class="string">"templates/"</span> &#125;)</span><br><span class="line">    )</span><br><span class="line">    .pipe(gulp.dest(<span class="string">"www/dist"</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Making-it-play-nice-with-ionic-serve"><a href="#Making-it-play-nice-with-ionic-serve" class="headerlink" title="Making it play nice with ionic serve"></a>Making it play nice with <code>ionic serve</code></h4><p>Finally, let’s modify our <code>ionic.project</code> file to make use of the build steps.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"gulpStartupTasks"</span>: [<span class="string">"default"</span>, <span class="string">"watch"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>This will run our <code>gulp</code> and <code>gulp watch</code> tasks which we create as follows, in our gulpfile.js:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">"default"</span>, [<span class="string">"sass"</span>, <span class="string">"templates"</span>, <span class="string">"build"</span>]);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">"watch"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.watch(paths.sass, [<span class="string">"sass"</span>]);</span><br><span class="line">  gulp.watch(paths.js, [<span class="string">"build"</span>]);</span><br><span class="line">  gulp.watch(paths.templates, [<span class="string">"templates"</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>Great, now every time we make a change, our build will be triggered and the page will automatically refresh!</p>
+<h3 id="Updating-our-app-version"><a href="#Updating-our-app-version" class="headerlink" title="Updating our app version"></a>Updating our app version</h3><p>Finally, I noticed that every time I update my app version number, I have to update it in quite a few places. package.json, bower.json, config.xml, and anywhere I use it inside my actual app (e.g. in the ‘about’ page). Instead, it would be nice to do this once. Luckily there’s a gulp task for that, and it’s really simple:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">"bump"</span>, <span class="built_in">require</span>(<span class="string">"gulp-cordova-bump"</span>));</span><br></pre></td></tr></table></figure>
+
+<p>Now when I want to update my app version number, all I have to do is run one of the following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ gulp bump --patch</span><br><span class="line">$ gulp bump --minor</span><br><span class="line">$ gulp bump --major</span><br><span class="line">$ gulp bump --setversion&#x3D;2.1.0</span><br></pre></td></tr></table></figure>
+
+<p>And gulp will patch everything up. Oh, and remember that <code>banner</code> step in the build mentioned above? Well, this will get the version number from our package.json, put it into our compiled app.js script as a global variable (<code>window.VERSION</code>), and we can now use it in our app! To make it play nice with Angular, we can put it into our <code>$rootScope</code> so we can use it directly in our template. We simply add the following line in our <code>run</code> block:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.run(<span class="function"><span class="keyword">function</span>(<span class="params">$ionicPlatform, $rootScope</span>) </span>&#123;</span><br><span class="line">  $rootScope.VERSION = <span class="built_in">window</span>.VERSION;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>and we can use it in any template:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  App Version &#123;&#123;VERSION&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Show-me-the-code"><a href="#Show-me-the-code" class="headerlink" title="Show me the code"></a>Show me the code</h3><p>Feel free to work with it on GitHub:<br><a href="https://github.com/meltuhamy/ionic-base">https://github.com/meltuhamy/ionic-base</a>.</p>
+<h3 id="Credits"><a href="#Credits" class="headerlink" title="Credits"></a>Credits</h3><p>Post thumbnail and image are from the Ionic project.</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/gulp/" rel="tag">gulp</a>, <a class="has-link-grey -link" href="/tags/ionic/" rel="tag">ionic</a>, <a class="has-link-grey -link" href="/tags/karma/" rel="tag">karma</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2015/06/23/coding-while-fasting/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Coding While Fasting</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2015/03/11/ionic-speed-writing-a-prayer-times-smartphone-app-in-a-day/">
+                <span class="level-item">Ionic Speed: Writing a prayer times smartphone app in a day</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="https://www.gravatar.com/avatar/33b3f65df5d56232a23519d20d01f736?s=128" alt="Mohamed Eltuhamy">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Mohamed Eltuhamy
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Web Developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>London, UK</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            12
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            3
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            49
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/meltuhamy" target="_blank" rel="noopener">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/meltuhamy">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Twitter" href="https://twitter.com/tweetsofcode">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="LinkedIn" href="https://www.linkedin.com/in/meltuhamy">
+                
+                <i class="fab fa-linkedin"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2016/06/14/coding-while-fasting-part-2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/dates-cup.jpg" alt="Coding While Fasting Part 2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2016-06-14T20:56:00.000Z">2016-06-14</time></div>
+                    <a href="/2016/06/14/coding-while-fasting-part-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Coding While Fasting Part 2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/productivity/">productivity</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2016/05/12/offline-resilient-mixpanel-tracking-for-ionic-without-a-cordova-plugin/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/goneoffline.png" alt="Offline-resilient Mixpanel tracking for Ionic without a Cordova plugin">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2016-05-12T18:30:00.000Z">2016-05-12</time></div>
+                    <a href="/2016/05/12/offline-resilient-mixpanel-tracking-for-ionic-without-a-cordova-plugin/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Offline-resilient Mixpanel tracking for Ionic without a Cordova plugin</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/dev/">dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2016/02/07/moving-to-hexo/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/hexo-logo.svg" alt="Moving to hexo">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2016-02-07T21:48:09.000Z">2016-02-07</time></div>
+                    <a href="/2016/02/07/moving-to-hexo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Moving to hexo</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">tech</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2015/06/23/coding-while-fasting/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Coding While Fasting">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2015-06-23T18:58:00.000Z">2015-06-23</time></div>
+                    <a href="/2015/06/23/coding-while-fasting/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Coding While Fasting</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/productivity/">productivity</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2015/03/22/a-better-ionic-starter-app/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/ionitron-avatar.png" alt="A better Ionic starter app">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2015-03-22T12:32:12.000Z">2015-03-22</time></div>
+                    <a href="/2015/03/22/a-better-ionic-starter-app/" class="title has-link-black-ter is-size-6 has-text-weight-normal">A better Ionic starter app</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/dev/">dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/dev/">
+            <span class="level-start">
+                <span class="level-item">dev</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/productivity/">
+            <span class="level-start">
+                <span class="level-item">productivity</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tech/">
+            <span class="level-start">
+                <span class="level-item">tech</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/ab-testing/" style="font-size: 10px;">ab testing</a> <a href="/tags/alfred/" style="font-size: 15px;">alfred</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/app/" style="font-size: 15px;">app</a> <a href="/tags/blinkbox/" style="font-size: 10px;">blinkbox</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/clef/" style="font-size: 10px;">clef</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/coding/" style="font-size: 15px;">coding</a> <a href="/tags/coffee/" style="font-size: 15px;">coffee</a> <a href="/tags/cordova/" style="font-size: 10px;">cordova</a> <a href="/tags/dash/" style="font-size: 10px;">dash</a> <a href="/tags/debugging/" style="font-size: 10px;">debugging</a> <a href="/tags/fasting/" style="font-size: 15px;">fasting</a> <a href="/tags/food/" style="font-size: 15px;">food</a> <a href="/tags/front-end/" style="font-size: 10px;">front-end</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/homebrew/" style="font-size: 10px;">homebrew</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/ionic/" style="font-size: 20px;">ionic</a> <a href="/tags/ios/" style="font-size: 15px;">ios</a> <a href="/tags/islam/" style="font-size: 15px;">islam</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jdb/" style="font-size: 10px;">jdb</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/karma/" style="font-size: 10px;">karma</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mixpanel/" style="font-size: 10px;">mixpanel</a> <a href="/tags/native/" style="font-size: 10px;">native</a> <a href="/tags/offline/" style="font-size: 10px;">offline</a> <a href="/tags/optimizely/" style="font-size: 10px;">optimizely</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/prayer/" style="font-size: 10px;">prayer</a> <a href="/tags/ramadan/" style="font-size: 15px;">ramadan</a> <a href="/tags/reddit/" style="font-size: 10px;">reddit</a> <a href="/tags/security/" style="font-size: 10px;">security</a> <a href="/tags/spa/" style="font-size: 10px;">spa</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/testing/" style="font-size: 10px;">testing</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/twitch/" style="font-size: 10px;">twitch</a> <a href="/tags/websockets/" style="font-size: 10px;">websockets</a> <a href="/tags/wordpress/" style="font-size: 15px;">wordpress</a>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2016/06/14/coding-while-fasting-part-2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/dates-cup.jpg" alt="Coding While Fasting Part 2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2016-06-14T20:56:00.000Z">2016-06-14</time></div>
+                    <a href="/2016/06/14/coding-while-fasting-part-2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Coding While Fasting Part 2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/productivity/">productivity</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2016/05/12/offline-resilient-mixpanel-tracking-for-ionic-without-a-cordova-plugin/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/goneoffline.png" alt="Offline-resilient Mixpanel tracking for Ionic without a Cordova plugin">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2016-05-12T18:30:00.000Z">2016-05-12</time></div>
+                    <a href="/2016/05/12/offline-resilient-mixpanel-tracking-for-ionic-without-a-cordova-plugin/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Offline-resilient Mixpanel tracking for Ionic without a Cordova plugin</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/dev/">dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2016/02/07/moving-to-hexo/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/hexo-logo.svg" alt="Moving to hexo">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2016-02-07T21:48:09.000Z">2016-02-07</time></div>
+                    <a href="/2016/02/07/moving-to-hexo/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Moving to hexo</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tech/">tech</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2015/06/23/coding-while-fasting/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Coding While Fasting">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2015-06-23T18:58:00.000Z">2015-06-23</time></div>
+                    <a href="/2015/06/23/coding-while-fasting/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Coding While Fasting</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/productivity/">productivity</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2015/03/22/a-better-ionic-starter-app/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/ionitron-avatar.png" alt="A better Ionic starter app">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2015-03-22T12:32:12.000Z">2015-03-22</time></div>
+                    <a href="/2015/03/22/a-better-ionic-starter-app/" class="title has-link-black-ter is-size-6 has-text-weight-normal">A better Ionic starter app</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/dev/">dev</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/dev/">
+            <span class="level-start">
+                <span class="level-item">dev</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/productivity/">
+            <span class="level-start">
+                <span class="level-item">productivity</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tech/">
+            <span class="level-start">
+                <span class="level-item">tech</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/ab-testing/" style="font-size: 10px;">ab testing</a> <a href="/tags/alfred/" style="font-size: 15px;">alfred</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/app/" style="font-size: 15px;">app</a> <a href="/tags/blinkbox/" style="font-size: 10px;">blinkbox</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/clef/" style="font-size: 10px;">clef</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/coding/" style="font-size: 15px;">coding</a> <a href="/tags/coffee/" style="font-size: 15px;">coffee</a> <a href="/tags/cordova/" style="font-size: 10px;">cordova</a> <a href="/tags/dash/" style="font-size: 10px;">dash</a> <a href="/tags/debugging/" style="font-size: 10px;">debugging</a> <a href="/tags/fasting/" style="font-size: 15px;">fasting</a> <a href="/tags/food/" style="font-size: 15px;">food</a> <a href="/tags/front-end/" style="font-size: 10px;">front-end</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/homebrew/" style="font-size: 10px;">homebrew</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/ionic/" style="font-size: 20px;">ionic</a> <a href="/tags/ios/" style="font-size: 15px;">ios</a> <a href="/tags/islam/" style="font-size: 15px;">islam</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/jdb/" style="font-size: 10px;">jdb</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/karma/" style="font-size: 10px;">karma</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mixpanel/" style="font-size: 10px;">mixpanel</a> <a href="/tags/native/" style="font-size: 10px;">native</a> <a href="/tags/offline/" style="font-size: 10px;">offline</a> <a href="/tags/optimizely/" style="font-size: 10px;">optimizely</a> <a href="/tags/osx/" style="font-size: 10px;">osx</a> <a href="/tags/prayer/" style="font-size: 10px;">prayer</a> <a href="/tags/ramadan/" style="font-size: 15px;">ramadan</a> <a href="/tags/reddit/" style="font-size: 10px;">reddit</a> <a href="/tags/security/" style="font-size: 10px;">security</a> <a href="/tags/spa/" style="font-size: 10px;">spa</a> <a href="/tags/terminal/" style="font-size: 10px;">terminal</a> <a href="/tags/testing/" style="font-size: 10px;">testing</a> <a href="/tags/til/" style="font-size: 20px;">til</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/twitch/" style="font-size: 10px;">twitch</a> <a href="/tags/websockets/" style="font-size: 10px;">websockets</a> <a href="/tags/wordpress/" style="font-size: 15px;">wordpress</a>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2016/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2016</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    Mohamed&#39;s blog
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Mohamed Eltuhamy&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="GitHub" href="https://github.com/meltuhamy">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://yoursite.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
