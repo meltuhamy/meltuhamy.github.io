@@ -1,29 +1,50 @@
-index:
-  home: 'home'
-  search: 'Search'
-  archive: 'archive'
-  category: 'category'
-  uncategorized: 'uncategorized'
-  tag: 'tag'
-nav:
-  next: 'Next'
-  prev: 'Prev'
-  older: 'Older'
-  newer: 'Newer'
+common:
+    archive:
+        one: 'Archive'
+        other: 'Archives'
+    category:
+        one: 'Category'
+        other: 'Categories'
+    tag:
+        one: 'Tag'
+        other: 'Tags'
+    post:
+        one: 'Post'
+        other: 'Posts'
+    prev: 'Previous'
+    next: 'Next'
 widget:
-  recents: 'recents'
-  archives: 'archives'
-  categories: 'categories'
-  links: 'links'
-  tags: 'tags'
-  tag_cloud: 'tag cloud'
+    follow: 'Follow'
+    recents: 'Recent'
+    links: 'Links'
+    tag_cloud: 'Tag Cloud'
+    catalogue: 'Catalogue'
+    email:
+        title: 'Subscribe Email'
+        button: 'Subscribe'
 article:
-  comments: 'Comments'
-  share: 'Share'
-  catalogue: 'Catalogue'
-profile:
-  follow: 'FOLLOW'
-  post: 'post'
-  tag: 'tag'
-  posts: 'posts'
-  tags: 'tags'
+    more: 'Read More'
+    comments: 'Comments'
+    read: 'read'
+    about: 'About'
+    words: 'words'
+donate:
+    title: 'Like this article? Support the author with'
+    alipay: 'Alipay'
+    wechat: 'Wechat'
+    paypal: 'Paypal'
+    patreon: 'Patreon'
+plugin:
+    backtotop: 'Back to Top'
+    visit: '%s visits'
+    visitor: 'Visited by %s users'
+search:
+    search: 'Search'
+    hint: 'Type something...'
+insight:
+    hint: 'Type something...'
+    posts: 'Posts'
+    pages: 'Pages'
+    categories: 'Categories'
+    tags: 'Tags'
+    untitled: '(Untitled)'

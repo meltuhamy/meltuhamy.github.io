@@ -1,30 +1,38 @@
-#By SrWoOoW 
-index:
-  home: 'Inicio'
-  search: 'Buscar'
-  archive: 'Archivo'
-  category: 'Categoria'
-  uncategorized: 'Sin categoría'
-  tag: 'Etiqueta'
-nav:
-  next: 'Siguiente '
-  prev: 'Anterior'
-  older: 'Más viejo'
-  newer: 'Más nuevo'
+#By SrWoOoW
+common:
+    archive:
+        one: 'Archivo'
+        other: 'Archivos'
+    category:
+        one: 'Categoría'
+        other: 'Categorías'
+    tag:
+        one: 'Etiqueta'
+        other: 'Etiquetas'
+    post:
+        one: 'Entrada'
+        other: 'Entradas'
+    prev: 'Anterior'
+    next: 'Siguiente'
 widget:
-  recents: 'Recientes'
-  archives: 'Archivos'
-  categories: 'Categorias'
-  links: 'Links'
-  tags: 'Etiquetas'
-  tag_cloud: 'Nube de etiquetas'
+    follow: 'SEGUIR'
+    recents: 'Recientes'
+    links: 'Enlaces'
+    tag_cloud: 'Nube de etiquetas'
+    catalogue: 'Catálogo'
 article:
-  comments: 'Comentarios'
-  share: 'Compartir'
-  catalogue: 'Catálogo'
-profile:
-  follow: 'SEGUIR'
-  post: 'Entrada'
-  tag: 'Etiqueta'
-  posts: 'Entradas'
-  tags: 'Etiquetas'
+    more: 'Leer más'
+    comments: 'Comentarios'
+    read: 'leer'
+    about: 'Acerca de'
+    words: 'palabras'
+search:
+    search: 'Buscar'
+    hint: 'Teclea algo...'
+insight:
+    hint: 'Teclea algo...'
+    posts: 'Entradas'
+    pages: 'Páginas'
+    categories: 'Categorías'
+    tags: 'Etiquetas'
+    untitled: '(Sin título)'
