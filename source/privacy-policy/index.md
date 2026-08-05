@@ -48,14 +48,6 @@ settings, and display options — are stored **locally on your own device only**
 transmitted to me or to anyone else, and I have no ability to read them. Deleting the app removes
 them from your device.
 
-### Prayer timetable data
-
-To show prayer times, the app may download timetable data over the internet. This is a request for
-public timetable information; it does not include any personal information about you. As with any
-internet request, the server providing that data receives the connection information that every web
-request carries, such as your device's IP address. That information is not used to identify you, is
-not linked to any profile, and is not stored by me for analysis.
-
 ## What data is shared, and with whom
 
 **I do not share, sell, rent or transfer any user data to any third party**, because the apps do not
@@ -87,8 +79,8 @@ The measures that do apply are:
 
 - **Data minimisation.** The apps are built to collect nothing. This is the primary safeguard: data
   that is never collected cannot be lost, misused or exposed.
-- **Encryption in transit.** Network requests made by the apps, such as fetching timetable data, use
-  HTTPS/TLS encryption.
+- **Nothing transmitted.** The apps do not send your data anywhere, so there is no transfer of
+  personal information that could be intercepted.
 - **On-device storage.** Your settings remain on your device, protected by your device's own
   operating system security and any screen lock, encryption or passcode you have enabled.
 - **Access control.** Any account I hold with the app stores, which gives access only to the
