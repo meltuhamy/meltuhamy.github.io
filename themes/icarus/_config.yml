@@ -34,6 +34,7 @@ navbar:
     Tags: /tags
     About: /about
     Apps: /apps
+    Privacy: /privacy-policy
   # Navigation bar links to be shown on the right
   links:
     Github:
