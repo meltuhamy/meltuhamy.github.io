@@ -12,10 +12,5 @@ Available for [Android](https://goo.gl/Kap6Sa) and [iOS](https://itunes.apple.co
 
 ### Privacy policy
 
-All apps I publish are subject to the following privacy policy:
-
-- I care about your data and won't collect it unnecessarily. When I need to collect it, I do so in a non-identifiable manner.
-
-- Data I collect is only to better understand how users use my apps. For example, the settings you use when configuring your prayer times.
-
-- I get other data from iOS and Android app stores that I use to find out installation and usage statistics. This data is subject to the perspective platform terms of service, and is also completely anonyomous and non personally identifable.
+All apps I publish are subject to a single [privacy policy](/privacy-policy/). In short: my apps
+collect no personal data at all.
