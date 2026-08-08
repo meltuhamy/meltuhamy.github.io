@@ -88,11 +88,11 @@
       <category term="dev" scheme="https://meltuhamy.com/categories/dev/"/>
     
     
-      <category term="ionic" scheme="https://meltuhamy.com/tags/ionic/"/>
-    
       <category term="android" scheme="https://meltuhamy.com/tags/android/"/>
     
       <category term="app" scheme="https://meltuhamy.com/tags/app/"/>
+    
+      <category term="ionic" scheme="https://meltuhamy.com/tags/ionic/"/>
     
       <category term="ios" scheme="https://meltuhamy.com/tags/ios/"/>
     
@@ -206,9 +206,9 @@
       <category term="dev" scheme="https://meltuhamy.com/categories/dev/"/>
     
     
-      <category term="gulp" scheme="https://meltuhamy.com/tags/gulp/"/>
-    
       <category term="ionic" scheme="https://meltuhamy.com/tags/ionic/"/>
+    
+      <category term="gulp" scheme="https://meltuhamy.com/tags/gulp/"/>
     
       <category term="karma" scheme="https://meltuhamy.com/tags/karma/"/>
     
@@ -239,11 +239,11 @@
       <category term="dev" scheme="https://meltuhamy.com/categories/dev/"/>
     
     
-      <category term="ionic" scheme="https://meltuhamy.com/tags/ionic/"/>
-    
       <category term="android" scheme="https://meltuhamy.com/tags/android/"/>
     
       <category term="app" scheme="https://meltuhamy.com/tags/app/"/>
+    
+      <category term="ionic" scheme="https://meltuhamy.com/tags/ionic/"/>
     
       <category term="ios" scheme="https://meltuhamy.com/tags/ios/"/>
     
@@ -346,8 +346,6 @@
       <category term="dev" scheme="https://meltuhamy.com/categories/dev/"/>
     
     
-      <category term="til" scheme="https://meltuhamy.com/tags/til/"/>
-    
       <category term="tools" scheme="https://meltuhamy.com/tags/tools/"/>
     
       <category term="debugging" scheme="https://meltuhamy.com/tags/debugging/"/>
@@ -359,6 +357,8 @@
       <category term="javascript" scheme="https://meltuhamy.com/tags/javascript/"/>
     
       <category term="jdb" scheme="https://meltuhamy.com/tags/jdb/"/>
+    
+      <category term="til" scheme="https://meltuhamy.com/tags/til/"/>
     
       <category term="websockets" scheme="https://meltuhamy.com/tags/websockets/"/>
     
@@ -470,11 +470,11 @@
     
       <category term="blog" scheme="https://meltuhamy.com/tags/blog/"/>
     
+      <category term="til" scheme="https://meltuhamy.com/tags/til/"/>
+    
       <category term="clef" scheme="https://meltuhamy.com/tags/clef/"/>
     
       <category term="security" scheme="https://meltuhamy.com/tags/security/"/>
-    
-      <category term="til" scheme="https://meltuhamy.com/tags/til/"/>
     
   </entry>
   
